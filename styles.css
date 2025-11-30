@@ -629,6 +629,10 @@ header.hero {
   .hero-card {
     grid-column: 1 / -1;
   }
+
+  .blog-page .hero-content {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 600px) {
@@ -701,6 +705,14 @@ header.hero {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
+  }
+
+  .blog-card {
+    padding: 14px;
+  }
+
+  .blog-controls {
+    justify-content: center;
   }
 }
 
