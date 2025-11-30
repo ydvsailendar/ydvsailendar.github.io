@@ -9,6 +9,12 @@
     content="Shailendra Yadav — Senior DevSecOps & SRE engineer specializing in AWS, Terraform, Kubernetes, observability, and secure delivery pipelines.">
   <meta name="keywords"
     content="DevSecOps, SRE, AWS, Terraform, Kubernetes, CloudFront, Serverless, CI/CD, Observability, Security, Cloud Engineer">
+  <meta property="og:title" content="Shailendra Yadav | DevSecOps & SRE">
+  <meta property="og:description" content="Senior DevSecOps & SRE engineer building secure, observable platforms on AWS.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ydvsailendar.github.io/assets/site/profile.jpg">
+  <meta property="og:url" content="https://ydvsailendar.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/site/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -253,6 +259,9 @@
             <p>Loading my latest notes on incident response, IaC patterns, and observability recipes…</p>
           </div>
         </div>
+        <div class="blog-controls">
+          <a class="ghost" href="blog.html">View all posts</a>
+        </div>
       </section>
 
       <section id="contact" class="section contact">
@@ -419,11 +428,14 @@
       return html;
     }
 
-    async function loadBlogs() {
+    const homePostLimit = 1;
+
+    function renderHomeBlogs() {
       const container = document.getElementById('blog-list');
       container.innerHTML = '';
+      const slice = posts.slice(0, homePostLimit);
 
-      for (const post of posts) {
+      for (const post of slice) {
         const article = document.createElement('a');
         article.href = `post.html?slug=${encodeURIComponent(post.slug)}`;
         article.className = 'card blog-card';
@@ -450,7 +462,7 @@
       }
     }
 
-    loadBlogs();
+    renderHomeBlogs();
   </script>
 </body>
 

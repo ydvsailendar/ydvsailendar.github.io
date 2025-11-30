@@ -8,9 +8,9 @@
   <meta name="description" content="Blog posts by Shailendra Yadav on DevSecOps, SRE, AWS, and observability.">
   <meta property="og:title" content="Blog | Shailendra Yadav">
   <meta property="og:description" content="Writing on DevSecOps, SRE, containers, observability, and incident response.">
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="website">
   <meta property="og:image" content="https://ydvsailendar.github.io/assets/site/profile.jpg">
-  <meta property="og:url" content="https://ydvsailendar.github.io/post.html">
+  <meta property="og:url" content="https://ydvsailendar.github.io/blog.html">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/site/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="post-page">
+<body class="blog-page">
   <div class="page">
     <header class="hero" id="top">
       <div class="nav">
@@ -33,27 +33,44 @@
           <a href="index.html#experience">Experience</a>
           <a href="index.html#skills">Skills</a>
           <a href="index.html#projects">Projects</a>
-          <a href="index.html#blog">Blog</a>
+          <a href="#blog">Blog</a>
           <a href="index.html#contact">Contact</a>
         </nav>
       </div>
       <div class="hero-content">
         <div class="hero-text">
           <p class="eyebrow">DevSecOps • SRE • Cloud</p>
-          <h1 id="post-title">Loading…</h1>
-          <p class="lede" id="post-subtitle">Full post</p>
-          <div class="meta" id="post-meta"></div>
+          <h1>All Posts</h1>
+          <p class="lede">Notes on infra-as-code, containers, observability, and incident response. Browse everything or jump into a post.</p>
+        </div>
+        <div class="hero-card" id="blog-hero-card">
+          <div class="stat">
+            <p class="label">Posts</p>
+            <p class="value" id="blog-count">—</p>
+          </div>
+          <div class="stat">
+            <p class="label">Themes</p>
+            <p class="value">DevSecOps · SRE</p>
+          </div>
+          <div class="stat">
+            <p class="label">Focus</p>
+            <p class="value">Cloud · Observability</p>
+          </div>
+          <div class="badge">Containers • IaC • Incident Response • Telemetry</div>
         </div>
       </div>
     </header>
 
     <main>
-      <section class="section">
-        <article class="card blog-card" id="post-article">
-          <div class="blog-body" id="post-body">
-            <p class="muted">Fetching post…</p>
-          </div>
-        </article>
+      <section id="blog" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Blog</p>
+          <h2>Latest Writing</h2>
+        </div>
+        <div id="blog-list" class="blog-list" aria-live="polite"></div>
+        <div class="blog-controls">
+          <button class="ghost" id="load-more-posts">Load more</button>
+        </div>
       </section>
     </main>
 
@@ -65,26 +82,29 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    const posts = {
-      'multi-tenant-content-delivery': {
+    const posts = [
+      {
+        slug: 'multi-tenant-content-delivery',
         title: 'CloudFront OAC + API Gateway: Multi-Tenant Content Delivery',
         date: '2025-04-15',
         tags: ['CloudFront', 'OAC', 'Serverless', 'Bedrock', 'Observability'],
         summary: 'How I built a secure-by-default, AI-augmented delivery platform with CloudFront OAC, API Gateway + Lambda, and Bedrock-powered workflows.'
       },
-      'container-filesystem-from-scratch': {
+      {
+        slug: 'container-filesystem-from-scratch',
         title: 'How Container Filesystems Work (DIY Docker-lite)',
         date: '2025-05-06',
         tags: ['Containers', 'OverlayFS', 'Namespaces', 'Docker'],
         summary: 'From rootfs and bind mounts to overlay copy-on-write: building a container-style filesystem with unshare/pivot_root.'
       },
-      'incident-runbooks-mttr': {
+      {
+        slug: 'incident-runbooks-mttr',
         title: 'Incident Runbooks That Actually Reduce MTTR',
         date: '2025-03-20',
         tags: ['Incident Response', 'Runbooks', 'Observability', 'SRE'],
         summary: 'A lightweight, actionable runbook pattern that keeps teams aligned under pressure and lowers time-to-detect and time-to-recover.'
       }
-    };
+    ];
 
     const postContent = {
       'multi-tenant-content-delivery': `## CloudFront OAC + API Gateway: Multi-Tenant Content Delivery
@@ -189,44 +209,60 @@
       return html;
     }
 
-    async function loadPost() {
-      const params = new URLSearchParams(window.location.search);
-      const slug = params.get('slug');
-      const meta = posts[slug];
-      const titleEl = document.getElementById('post-title');
-      const subtitleEl = document.getElementById('post-subtitle');
-      const metaEl = document.getElementById('post-meta');
-      const bodyEl = document.getElementById('post-body');
+    const pageSize = 9;
+    let page = 0;
 
-      if (!slug || !meta) {
-        titleEl.textContent = 'Post not found';
-        bodyEl.innerHTML = '<p class="muted">The requested post is unavailable.</p>';
-        return;
+    function renderBlogPage() {
+      const container = document.getElementById('blog-list');
+      const loadMoreBtn = document.getElementById('load-more-posts');
+      const slice = posts.slice(0, (page + 1) * pageSize);
+      container.innerHTML = '';
+
+      for (const post of slice) {
+        const article = document.createElement('a');
+        article.href = `post.html?slug=${encodeURIComponent(post.slug)}`;
+        article.className = 'card blog-card';
+        article.setAttribute('aria-label', `Read blog post: ${post.title}`);
+
+        const header = document.createElement('header');
+        header.innerHTML = `
+          <div>
+            <p class="eyebrow">${new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}</p>
+            <h3>${post.title}</h3>
+          </div>
+          <span class="tag">${post.tags.join(' · ')}</span>
+        `;
+
+        const body = document.createElement('div');
+        body.className = 'blog-body';
+        const content = postContent[post.slug] || '';
+        const readTime = estimateReadTime(content || post.summary);
+        body.innerHTML = `<p>${post.summary}</p><p class="muted">${readTime} · ${post.tags.join(' · ')}</p><span class="read-more">Read full →</span>`;
+
+        article.appendChild(header);
+        article.appendChild(body);
+        container.appendChild(article);
       }
 
-      titleEl.textContent = meta.title;
-      subtitleEl.textContent = meta.summary;
-      const inlineMd = postContent[slug] || '';
-      metaEl.textContent = `${new Date(meta.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })} · ${estimateReadTime(inlineMd)} · ${meta.tags.join(' · ')}`;
-
-      try {
-        const res = await fetch(`posts/${slug}.md`);
-        if (!res.ok) throw new Error('Fetch failed');
-        const md = await res.text();
-          bodyEl.innerHTML = simpleMarkdownToHtml(md || inlineMd);
-          // Update OG description dynamically if available
-          const ogDesc = document.querySelector('meta[property="og:description"]');
-          if (ogDesc) ogDesc.setAttribute('content', meta.summary);
-        } catch (err) {
-          if (inlineMd) {
-            bodyEl.innerHTML = simpleMarkdownToHtml(inlineMd);
-          } else {
-            bodyEl.innerHTML = '<p class="muted">Unable to load this post right now.</p>';
-          }
-        }
+      if ((page + 1) * pageSize >= posts.length) {
+        loadMoreBtn.style.display = 'none';
+      } else {
+        loadMoreBtn.style.display = 'inline-flex';
       }
+    }
 
-    loadPost();
+    function initBlogs() {
+      const loadMoreBtn = document.getElementById('load-more-posts');
+    document.getElementById('blog-count').textContent = posts.length;
+    renderBlogPage();
+      loadMoreBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        page += 1;
+        renderBlogPage();
+      });
+    }
+
+    initBlogs();
   </script>
 </body>
 

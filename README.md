@@ -5,6 +5,7 @@ Static site ready for GitHub Pages or AWS Amplify. Includes portfolio sections, 
 ## Structure
 - `index.html` — main landing page (hero, experience timeline, skills, featured project, blog list, contact).
 - `projects.html` — full project list.
+- `blog.html` — all blog posts with pagination.
 - `post.html` — blog post reader; open with `post.html?slug=<slug>`.
 - `styles.css` — global styles and responsive layout.
 - `posts/` — blog markdown (`*.md`).
@@ -27,6 +28,7 @@ python3 -m http.server 8000
 1) Create `posts/<slug>.md` with your content.  
 2) Add the post metadata in:
    - `index.html` → `posts` array (slug, title, date, tags, summary).
+   - `blog.html` → `posts` array (same fields).
    - `post.html` → `posts` map and `postContent` inline fallback.  
 3) Access at `post.html?slug=<slug>`.
 
