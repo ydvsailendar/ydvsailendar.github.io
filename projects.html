@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Shailendra Yadav</title>
+  <meta name="description"
+    content="Projects by Shailendra Yadav — DevSecOps & SRE engineer delivering secure, observable, cloud-native platforms on AWS.">
+  <link rel="icon" href="assets/site/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="page">
+    <header class="hero" id="top">
+      <div class="nav">
+        <a class="logo" href="index.html#top" aria-label="Back to home">
+          <img src="assets/site/profile.jpg" alt="Shailendra Yadav logo">
+        </a>
+        <nav>
+          <a href="index.html#about">About</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="index.html#blog">Blog</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="eyebrow">Portfolio</p>
+          <h1>Projects & Delivery</h1>
+          <p class="lede">Selected work across secure content delivery, private ML, real-time data pipelines, cost
+            optimization, and serverless modernization.</p>
+          <div class="actions">
+            <a class="primary" href="mailto:yadavshailendra0905@gmail.com">Email Me</a>
+            <a class="ghost" href="index.html#contact">Back to Contact</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="stat">
+            <p class="label">Cloud</p>
+            <p class="value">AWS</p>
+          </div>
+          <div class="stat">
+            <p class="label">Focus</p>
+            <p class="value">DevSecOps · SRE</p>
+          </div>
+          <div class="stat">
+            <p class="label">Infra</p>
+            <p class="value">Terraform · Serverless</p>
+          </div>
+          <div class="badge">CloudFront • Lambda • ECS/EKS • Bedrock • Observability</div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="projects" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Impact</p>
+          <h2>Full Project List</h2>
+        </div>
+        <div class="card-grid projects">
+          <article class="card project-card">
+            <header>
+              <h3>Multi-Tenant Content Delivery & AI-Powered Healthcare Platform</h3>
+              <span class="tag">CloudFront OAC • Lambda • Bedrock</span>
+            </header>
+            <p class="project-summary">Built a secure, multi-tenant delivery layer with CloudFront OAC and signed URLs
+              backed by API Gateway + Lambda (TypeScript), plus AI workflows for transcription and translation.</p>
+            <ul class="project-points">
+              <li>OAC-protected S3 origins, per-tenant routing via Route53, and signed cookies/URLs for uploads and
+                downloads.</li>
+              <li>Bedrock + Transcribe + Comprehend + Translate pipelines for multilingual care-team communication.</li>
+              <li>End-to-end observability with CloudWatch dashboards/alarms, X-Ray tracing, and Lambda alert handlers.
+              </li>
+              <li>Terraform/Serverless modules for repeatable deployments across environments.</li>
+            </ul>
+            <div class="mini-pills">
+              <span>VPC endpoints</span><span>Terraform</span><span>Serverless design</span><span>AI integration</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <header>
+              <h3>Private Facial Age Verification Platform</h3>
+              <span class="tag">ALB mTLS • PrivateLink • ML Inference</span>
+            </header>
+            <p class="project-summary">Zero-public-access ML platform with strict network boundaries and authenticated
+              inference across accounts.</p>
+            <ul class="project-points">
+              <li>NLB → ALB mTLS with ACM PCA-issued certs; exposed privately via PrivateLink and Direct Connect.</li>
+              <li>Lambda layers for JWT/JWS validation, request transformation, and image preprocessing (distroless).
+              </li>
+              <li>ADOT + CloudWatch logs/metrics/alarms and encrypted S3 audit trails for compliance.</li>
+            </ul>
+            <div class="mini-pills">
+              <span>Terraform</span><span>Lambda</span><span>ECS/EC2 ASG</span><span>OTEL</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <header>
+              <h3>Real-Time Weather & Airport Ops Platform</h3>
+              <span class="tag">Tomorrow.io → MSK → EKS</span>
+            </header>
+            <p class="project-summary">Real-time ingestion and decision support for airports, combining weather feeds
+              with flight ops data.</p>
+            <ul class="project-points">
+              <li>Lambda/EventBridge ingests Tomorrow.io schedules and events into MSK.</li>
+              <li>EKS microservices merge weather, runway visibility, and flight schedules for alerting and dashboards.
+              </li>
+              <li>Prometheus + CloudWatch + OTEL tracing for full path visibility.</li>
+            </ul>
+            <div class="mini-pills">
+              <span>MSK/Kafka</span><span>Terraform</span><span>ArgoCD</span><span>GitHub Actions</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <header>
+              <h3>Cost Optimisation Framework</h3>
+              <span class="tag">EC2 • RDS • EBS • CloudWatch</span>
+            </header>
+            <p class="project-summary">Python automation to reclaim waste and enforce retention while keeping compliance
+              intact.</p>
+            <ul class="project-points">
+              <li>Cleanup for unused EBS volumes, stale AMIs/snapshots, and outdated RDS snapshots with guardrails.</li>
+              <li>Scheduled EC2 shutdowns for non-prod; enforced CloudWatch log retention policies.</li>
+              <li>Delivered recurring monthly savings across compute, storage, and logging.</li>
+            </ul>
+            <div class="mini-pills">
+              <span>Python (boto3)</span><span>Jenkins</span><span>Compliance</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <header>
+              <h3>Serverless Migration (50% Faster Delivery)</h3>
+              <span class="tag">Serverless Framework • Compose</span>
+            </header>
+            <p class="project-summary">Modernized brittle Bash+CloudFormation pipelines into Serverless Framework +
+              Compose.</p>
+            <ul class="project-points">
+              <li>Service separation with declarative deploys; parallelized environments via Compose.</li>
+              <li>Removed “nuke and pray” rebuilds; improved dependency hygiene and rollback confidence.</li>
+              <li>Cut deployment times by ~50% and reduced operational overhead.</li>
+            </ul>
+            <div class="mini-pills">
+              <span>CI/CD</span><span>IaC</span><span>Deployment optimisation</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Shailendra Yadav · DevSecOps & SRE for AWS-first platforms.</p>
+      <div class="footer-links">
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

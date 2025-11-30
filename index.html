@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shailendra Yadav | DevSecOps & SRE</title>
+  <meta name="description"
+    content="Shailendra Yadav — Senior DevSecOps & SRE engineer specializing in AWS, Terraform, Kubernetes, observability, and secure delivery pipelines.">
+  <meta name="keywords"
+    content="DevSecOps, SRE, AWS, Terraform, Kubernetes, CloudFront, Serverless, CI/CD, Observability, Security, Cloud Engineer">
+  <link rel="icon" href="assets/site/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="page">
+    <header class="hero" id="top">
+      <div class="nav">
+        <a class="logo" href="#top" aria-label="Back to top">
+          <img src="assets/site/profile.jpg" alt="Shailendra Yadav logo">
+        </a>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="eyebrow">DevSecOps • SRE • Cloud</p>
+          <h1>Shailendra Yadav</h1>
+          <p class="lede">
+            Senior DevSecOps Engineer with 8+ years building resilient, secure, and observable platforms on AWS. I
+            bridge code and cloud—shipping automation, IaC, and runbooks that keep production calm and compliant.
+          </p>
+          <div class="actions">
+            <a class="primary" href="#contact">Contact Me</a>
+            <a class="ghost" href="mailto:yadavshailendra0905@gmail.com">yadavshailendra0905@gmail.com</a>
+          </div>
+          <div class="meta">
+            <span>Based in UK (GMT)</span>
+            <span>Phone: (+44) 7503117315</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="stat">
+            <p class="label">Years in Prod</p>
+            <p class="value">8+</p>
+          </div>
+          <div class="stat">
+            <p class="label">Cloud</p>
+            <p class="value">AWS First</p>
+          </div>
+          <div class="stat">
+            <p class="label">Focus</p>
+            <p class="value">DevSecOps · SRE</p>
+          </div>
+          <div class="badge">Terraform • CDK • Serverless • Kubernetes • Observability</div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Profile</p>
+          <h2>About Me</h2>
+        </div>
+        <div class="text-grid">
+          <p>
+            I operate production workloads across AWS with a developer-first mindset. My background spans full-stack
+            engineering (React, Node.js, Python) and deep platform work (Terraform, CDK, Kubernetes, GitHub Actions). I
+            build observability, automate toil, and design secure-by-default systems aligned to DevSecOps and SRE
+            practices.
+          </p>
+          <p>
+            Recent focus: hardening IAM and network boundaries, tuning CI/CD for speed and safety, and codifying
+            incident response with metrics, tracing, and actionable alerts. I value fast feedback loops, clear runbooks,
+            and collaborative postmortems that drive measurable MTTR/availability gains.
+          </p>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Career</p>
+          <h2>Experience</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content card">
+              <header>
+                <div>
+                  <p class="eyebrow">Jun 2023 – Present</p>
+                  <h3>Lead DevSecOps Engineer · Safedent</h3>
+                  <p class="sub">Hemel Hempstead, UK</p>
+                </div>
+                <span class="tag">AWS • Terraform • GitHub Actions</span>
+              </header>
+              <ul>
+                <li>Operate ECS/Fargate and Lambda workloads with tight IAM, VPC controls, latency-aware routing, and
+                  zero public blast radius.</li>
+                <li>Built end-to-end observability with CloudWatch logs/metrics/alarms/dashboards, X-Ray tracing, and
+                  SNS/Lambda alert handlers that cut noise and MTTR.</li>
+                <li>Author Terraform modules and Serverless patterns; enforce reusable blueprints and PR reviews for
+                  consistent multi-env delivery.</li>
+                <li>Maintain CI/CD with automated builds, tests, and container security scans (SonarQube, Trivy, Clair)
+                  deploying to ECS/EKS via GitOps.</li>
+                <li>Lead incident response, root-cause investigations (OOM, limits, API bottlenecks), and long-term
+                  fixes that stabilized SLAs.</li>
+                <li>Automate housekeeping with Lambda+boto3 for cost savings and health checks; design alerts for
+                  cluster/VPC capacity to pre-empt outages.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content card">
+              <header>
+                <div>
+                  <p class="eyebrow">Apr 2020 – May 2023</p>
+                  <h3>Senior Site Reliability Engineer · CloudFactory</h3>
+                  <p class="sub">Reading, UK</p>
+                </div>
+                <span class="tag">ECS · API Gateway · New Relic</span>
+              </header>
+              <ul>
+                <li>Implemented mTLS on ALB → ECS/Private API Gateway with org-signed certs and cross-account
+                  PrivateLink exposure.</li>
+                <li>Locked down private services with VPC endpoints, SSM session access, and audit-ready CloudWatch/KMS
+                  logging.</li>
+                <li>Versioned API Gateway + Lambda with staged aliases; emitted metrics via log filters and
+                  alarms/dashboards.</li>
+                <li>Automated AMI builds for legacy Rails on EC2; reduced vuln surface and improved patch cadence.</li>
+                <li>Built New Relic dashboards/alerts via Terraform; drove observability migration from CloudWatch to NR
+                  for app+infra telemetry.</li>
+                <li>Lambda+EventBridge automation to scale ECS clusters for business hours vs. off-hours cost control,
+                  saving double-digit % monthly.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content card">
+              <header>
+                <div>
+                  <p class="eyebrow">Apr 2018 – Mar 2020</p>
+                  <h3>DevOps Engineer · Bottle Technologies</h3>
+                  <p class="sub">Kathmandu, Nepal</p>
+                </div>
+                <span class="tag">AWS Org • Jenkins • Kafka</span>
+              </header>
+              <ul>
+                <li>Built reusable auth/RBAC on AWS Cognito; enforced GitOps for infra, security, and access control.
+                </li>
+                <li>Led cost optimization with autoscaling, right-sizing, and billing alerts across legacy services.
+                </li>
+                <li>Managed multi-account AWS with Control Tower, GuardRails, SCPs; automated DNS with Route53.</li>
+                <li>Created Jenkins pipelines (DSL, JCasC) with SonarQube scans, tests, Docker builds, and JFrog
+                  publishing.</li>
+                <li>Deployed Prometheus+Grafana+Loki stacks; tuned PromQL for custom service metrics.</li>
+                <li>Developed Kafka producers/consumers and optimized throughput, latency, and capacity.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content card">
+              <header>
+                <div>
+                  <p class="eyebrow">Aug 2014 – Apr 2018</p>
+                  <h3>Frontend Developer · BlackSpade Financial Services</h3>
+                  <p class="sub">Kakinada, India</p>
+                </div>
+                <span class="tag">React · GraphQL · AWS</span>
+              </header>
+              <ul>
+                <li>Shipped multilingual chat and IoT dashboards using React, GraphQL, and AWS IoT Core.</li>
+                <li>Built admin portals with Cognito auth; integrated DynamoDB, S3, MongoDB, and Postgres (TypeORM).
+                </li>
+                <li>Documented APIs with Swagger/Postman; unit tests with Jest; collaborated via Jira and Confluence.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Stack</p>
+          <h2>Skills & Tools</h2>
+        </div>
+        <div class="pill-grid">
+          <div class="pill">AWS (ECS, EKS, Lambda, API Gateway, VPC, CloudFront, S3)</div>
+          <div class="pill">Terraform · CDK · CloudFormation · Serverless Framework/Compose · IaC governance</div>
+          <div class="pill">CI/CD: GitHub Actions, GitLab, Jenkins, GitOps</div>
+          <div class="pill">Containers: Docker, distroless images, ECS, EKS, Kubernetes, ArgoCD</div>
+          <div class="pill">Observability: CloudWatch, X-Ray, ADOT/OTEL, Prometheus, Grafana, Loki, Jaeger, New Relic
+          </div>
+          <div class="pill">Security: IAM least privilege, mTLS, PrivateLink, WAF, Security Hub, secrets mgmt,
+            compliance logging</div>
+          <div class="pill">Datastores: RDS, DynamoDB, S3, MSK/Kafka, Redis</div>
+          <div class="pill">Scripting & Langs: Python, TypeScript/Node.js, Bash</div>
+          <div class="pill">Messaging/Events: EventBridge, SQS, SNS, Kinesis</div>
+          <div class="pill">Monitoring & Incident Response, RCAs, capacity planning, performance tuning</div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Impact</p>
+          <h2>Selected Projects</h2>
+        </div>
+        <div class="card-grid projects">
+          <article class="card project-card">
+            <header>
+              <h3>Featured: Multi-Tenant Content Delivery & AI Healthcare Platform</h3>
+              <span class="tag">CloudFront OAC • Lambda • Bedrock</span>
+            </header>
+            <p class="project-summary">Built a secure, multi-tenant delivery layer with CloudFront OAC and signed URLs
+              backed by API Gateway + Lambda (TypeScript), plus AI workflows for transcription and translation.</p>
+            <div class="mini-pills">
+              <span>Serverless</span><span>AI integration</span><span>Observability</span>
+            </div>
+            <div class="project-cta">
+              <a class="primary" href="projects.html">View all projects</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="blog" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Writing</p>
+          <h2>Blog & Notes</h2>
+        </div>
+        <div id="blog-list" class="blog-list" aria-live="polite">
+          <div class="blog-placeholder">
+            <p>Loading my latest notes on incident response, IaC patterns, and observability recipes…</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <div class="section-head">
+          <p class="eyebrow">Let’s Talk</p>
+          <h2>Contact Me</h2>
+        </div>
+        <div class="contact-card">
+          <p>Open to full-time DevOps/SRE roles in cloud-first teams. Prefer AWS-heavy environments with strong
+            engineering culture.</p>
+          <div class="contact-actions">
+            <a class="primary" href="mailto:yadavshailendra0905@gmail.com">Email Me</a>
+            <a class="ghost" href="tel:+447503117315">Call: (+44) 7503117315</a>
+            <a class="ghost" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+          <div class="meta">Certified: AWS DevOps Engineer – Professional · B.Tech Computer Science (JNTUK)</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Shailendra Yadav · DevSecOps & SRE for AWS-first platforms.</p>
+      <div class="footer-links">
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+  </div>
+  <script>
+    // Minimal JS: keep footer year fresh, theme toggle, blog loader, and smooth scroll fallback.
+    document.getElementById('year').textContent = new Date().getFullYear();
+    if ('scrollBehavior' in document.documentElement.style === false) {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    }
+
+    const posts = [
+      {
+        slug: 'multi-tenant-content-delivery',
+        title: 'CloudFront OAC + API Gateway: Multi-Tenant Content Delivery',
+        date: '2025-04-15',
+        tags: ['CloudFront', 'OAC', 'Serverless', 'Bedrock', 'Observability'],
+        summary: 'How I built a secure-by-default, AI-augmented delivery platform with CloudFront OAC, API Gateway + Lambda, and Bedrock-powered workflows.'
+      },
+      {
+        slug: 'container-filesystem-from-scratch',
+        title: 'How Container Filesystems Work (DIY Docker-lite)',
+        date: '2025-05-06',
+        tags: ['Containers', 'OverlayFS', 'Namespaces', 'Docker'],
+        summary: 'From rootfs and bind mounts to overlay copy-on-write: building a container-style filesystem with unshare/pivot_root.'
+      },
+      {
+        slug: 'incident-runbooks-mttr',
+        title: 'Incident Runbooks That Actually Reduce MTTR',
+        date: '2025-03-20',
+        tags: ['Incident Response', 'Runbooks', 'Observability', 'SRE'],
+        summary: 'A lightweight, actionable runbook pattern that keeps teams aligned under pressure and lowers time-to-detect and time-to-recover.'
+      }
+    ];
+
+    const postContent = {
+      'multi-tenant-content-delivery': `## CloudFront OAC + API Gateway: Multi-Tenant Content Delivery
+
+### What I built
+- Locked down CloudFront with Origin Access Control (OAC) and signed cookies/URLs so every tenant’s assets stay private by default.
+- Routed tenants with Route53 and per-tenant CDN behaviors that forward scoped headers to API Gateway + Lambda (TypeScript).
+- Added Bedrock + Transcribe + Comprehend + Translate for transcription and multilingual summaries inside the same pipeline.
+
+### Reliability, security, and ops
+- End-to-end observability with CloudWatch metrics, logs, X-Ray traces, and alarms tied to Slack/SNS for low-noise paging.
+- IaC via Terraform + Serverless; reusable modules for CloudFront, S3 policies, VPC endpoints, and Lambda telemetry.
+- Latency-aware cache keys, shielded origins (no public S3/ALB), and least-privilege IAM for upload + access flows.
+
+### Outcome
+- Delivered a secure, multi-tenant, AI-powered delivery layer that cut content latency and reduced manual ops while keeping costs predictable with serverless scale-to-zero.`,
+      'container-filesystem-from-scratch': `## How Container Filesystems Work (Building One from Scratch)
+
+### TL;DR
+- Containers isolate processes primarily with kernel namespaces; a container filesystem is just a rootfs tree + a chroot-like pivot + a set of bind mounts.
+- Union/overlay layers provide copy-on-write semantics so images stay read-only while containers get a writable upperdir.
+- You can assemble a minimal container runtime with unshare, pivot_root/chroot, and a few bind mounts — no Docker required.
+
+### Steps I walked through
+- Create a minimal rootfs (e.g., Alpine busybox) and bind-mount /proc, /sys, /dev into it for basic tooling to work.
+- Use unshare -m -u -i -n -p to create new mount, UTS, IPC, network, and PID namespaces.
+- Perform pivot_root (or chroot) into the rootfs so PID 1 in the new namespace sees it as /.
+- Start a process (e.g., /bin/sh) inside the new namespace; from the outside it is just another host process with different namespaces.
+- Add OverlayFS for image layers: lowerdir(s) = image layers (read-only), upperdir = container writable layer, workdir = required scratch. Mount them together as the container’s rootfs.
+
+### Why this matters
+- Namespaces handle isolation; cgroups handle resource limits; OverlayFS handles copy-on-write. Understanding these speeds up debugging and security reviews.`,
+      'incident-runbooks-mttr': `## Incident Runbooks That Actually Reduce MTTR
+
+### The problem
+- Runbooks often read like novels or are stale; responders skip steps, and MTTR drifts up.
+- Alerts lack context; people burn time rediscovering dashboards, feature flags, and owners.
+
+### The approach I use
+- Each runbook starts with a single-page checklist (who, where, what to check first) and a 5-minute rollback/mitigation path.
+- Link directly to golden dashboards and logs: CloudWatch metrics/alarms, X-Ray traces, Grafana, and service run logs.
+- Encode fast-fail tests (curl, health checks, feature-flag state) and escalation paths with SLAs.
+- Keep a timeline template for responders to note actions and timestamps—fuel for RCA later.
+
+### Results
+- Faster TTD/MTTR from context-rich alerts and clear mitigation.
+- Better RCAs due to captured timelines and consistent handoffs.`
+    };
+
+    function estimateReadTime(text) {
+      const words = text ? text.trim().split(/\s+/).length : 0;
+      const minutes = Math.max(1, Math.round(words / 200));
+      return `${minutes} min read`;
+    }
+
+    function simpleMarkdownToHtml(markdown) {
+      const escape = (str) => str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      const lines = markdown.split('\n');
+      let html = '';
+      let inList = false;
+
+      for (const line of lines) {
+        if (line.trim() === '') {
+          if (inList) {
+            html += '</ul>';
+            inList = false;
+          }
+          continue;
+        }
+        if (line.startsWith('### ')) {
+          if (inList) {
+            html += '</ul>';
+            inList = false;
+          }
+          html += `<h3>${escape(line.slice(4))}</h3>`;
+          continue;
+        }
+        if (line.startsWith('## ')) {
+          if (inList) {
+            html += '</ul>';
+            inList = false;
+          }
+          html += `<h2>${escape(line.slice(3))}</h2>`;
+          continue;
+        }
+        if (line.startsWith('- ')) {
+          if (!inList) {
+            html += '<ul>';
+            inList = true;
+          }
+          html += `<li>${escape(line.slice(2))}</li>`;
+          continue;
+        }
+        if (inList) {
+          html += '</ul>';
+          inList = false;
+        }
+        html += `<p>${escape(line)}</p>`;
+      }
+
+      if (inList) html += '</ul>';
+      return html;
+    }
+
+    async function loadBlogs() {
+      const container = document.getElementById('blog-list');
+      container.innerHTML = '';
+
+      for (const post of posts) {
+        const article = document.createElement('a');
+        article.href = `post.html?slug=${encodeURIComponent(post.slug)}`;
+        article.className = 'card blog-card';
+        article.setAttribute('aria-label', `Read blog post: ${post.title}`);
+
+        const header = document.createElement('header');
+        header.innerHTML = `
+          <div>
+            <p class="eyebrow">${new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}</p>
+            <h3>${post.title}</h3>
+          </div>
+          <span class="tag">${post.tags.join(' · ')}</span>
+        `;
+
+        const body = document.createElement('div');
+        body.className = 'blog-body';
+        const content = postContent[post.slug] || '';
+        const readTime = estimateReadTime(content || post.summary);
+        body.innerHTML = `<p>${post.summary}</p><p class="muted">${readTime} · ${post.tags.join(' · ')}</p><span class="read-more">Read full →</span>`;
+
+        article.appendChild(header);
+        article.appendChild(body);
+        container.appendChild(article);
+      }
+    }
+
+    loadBlogs();
+  </script>
+</body>
+
+</html>

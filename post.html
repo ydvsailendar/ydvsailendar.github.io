@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Shailendra Yadav</title>
+  <meta name="description" content="Blog posts by Shailendra Yadav on DevSecOps, SRE, AWS, and observability.">
+  <link rel="icon" href="assets/site/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="post-page">
+  <div class="page">
+    <header class="hero" id="top">
+      <div class="nav">
+        <a class="logo" href="index.html#top" aria-label="Back to home">
+          <img src="assets/site/profile.jpg" alt="Shailendra Yadav logo">
+        </a>
+        <nav>
+          <a href="index.html#about">About</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#blog">Blog</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="eyebrow">DevSecOps • SRE • Cloud</p>
+          <h1 id="post-title">Loading…</h1>
+          <p class="lede" id="post-subtitle">Full post</p>
+          <div class="meta" id="post-meta"></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <article class="card blog-card" id="post-article">
+          <div class="blog-body" id="post-body">
+            <p class="muted">Fetching post…</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Shailendra Yadav · DevSecOps & SRE for AWS-first platforms.</p>
+      <a href="#top">Back to top</a>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const posts = {
+      'multi-tenant-content-delivery': {
+        title: 'CloudFront OAC + API Gateway: Multi-Tenant Content Delivery',
+        date: '2025-04-15',
+        tags: ['CloudFront', 'OAC', 'Serverless', 'Bedrock', 'Observability'],
+        summary: 'How I built a secure-by-default, AI-augmented delivery platform with CloudFront OAC, API Gateway + Lambda, and Bedrock-powered workflows.'
+      },
+      'container-filesystem-from-scratch': {
+        title: 'How Container Filesystems Work (DIY Docker-lite)',
+        date: '2025-05-06',
+        tags: ['Containers', 'OverlayFS', 'Namespaces', 'Docker'],
+        summary: 'From rootfs and bind mounts to overlay copy-on-write: building a container-style filesystem with unshare/pivot_root.'
+      },
+      'incident-runbooks-mttr': {
+        title: 'Incident Runbooks That Actually Reduce MTTR',
+        date: '2025-03-20',
+        tags: ['Incident Response', 'Runbooks', 'Observability', 'SRE'],
+        summary: 'A lightweight, actionable runbook pattern that keeps teams aligned under pressure and lowers time-to-detect and time-to-recover.'
+      }
+    };
+
+    const postContent = {
+      'multi-tenant-content-delivery': `## CloudFront OAC + API Gateway: Multi-Tenant Content Delivery
+
+### What I built
+- Locked down CloudFront with Origin Access Control (OAC) and signed cookies/URLs so every tenant’s assets stay private by default.
+- Routed tenants with Route53 and per-tenant CDN behaviors that forward scoped headers to API Gateway + Lambda (TypeScript).
+- Added Bedrock + Transcribe + Comprehend + Translate for transcription and multilingual summaries inside the same pipeline.
+
+### Reliability, security, and ops
+- End-to-end observability with CloudWatch metrics, logs, X-Ray traces, and alarms tied to Slack/SNS for low-noise paging.
+- IaC via Terraform + Serverless; reusable modules for CloudFront, S3 policies, VPC endpoints, and Lambda telemetry.
+- Latency-aware cache keys, shielded origins (no public S3/ALB), and least-privilege IAM for upload + access flows.
+
+### Outcome
+- Delivered a secure, multi-tenant, AI-powered delivery layer that cut content latency and reduced manual ops while keeping costs predictable with serverless scale-to-zero.`,
+      'container-filesystem-from-scratch': `## How Container Filesystems Work (Building One from Scratch)
+
+### TL;DR
+- Containers isolate processes primarily with kernel namespaces; a container filesystem is just a rootfs tree + a chroot-like pivot + a set of bind mounts.
+- Union/overlay layers provide copy-on-write semantics so images stay read-only while containers get a writable upperdir.
+- You can assemble a minimal container runtime with unshare, pivot_root/chroot, and a few bind mounts — no Docker required.
+
+### Steps I walked through
+- Create a minimal rootfs (e.g., Alpine busybox) and bind-mount /proc, /sys, /dev into it for basic tooling to work.
+- Use unshare -m -u -i -n -p to create new mount, UTS, IPC, network, and PID namespaces.
+- Perform pivot_root (or chroot) into the rootfs so PID 1 in the new namespace sees it as /.
+- Start a process (e.g., /bin/sh) inside the new namespace; from the outside it is just another host process with different namespaces.
+- Add OverlayFS for image layers: lowerdir(s) = image layers (read-only), upperdir = container writable layer, workdir = required scratch. Mount them together as the container’s rootfs.
+
+### Why this matters
+- Namespaces handle isolation; cgroups handle resource limits; OverlayFS handles copy-on-write. Understanding these speeds up debugging and security reviews.`,
+      'incident-runbooks-mttr': `## Incident Runbooks That Actually Reduce MTTR
+
+### The problem
+- Runbooks often read like novels or are stale; responders skip steps, and MTTR drifts up.
+- Alerts lack context; people burn time rediscovering dashboards, feature flags, and owners.
+
+### The approach I use
+- Each runbook starts with a single-page checklist (who, where, what to check first) and a 5-minute rollback/mitigation path.
+- Link directly to golden dashboards and logs: CloudWatch metrics/alarms, X-Ray traces, Grafana, and service run logs.
+- Encode fast-fail tests (curl, health checks, feature-flag state) and escalation paths with SLAs.
+- Keep a timeline template for responders to note actions and timestamps—fuel for RCA later.
+
+### Results
+- Faster TTD/MTTR from context-rich alerts and clear mitigation.
+- Better RCAs due to captured timelines and consistent handoffs.`
+    };
+
+    function estimateReadTime(text) {
+      const words = text ? text.trim().split(/\s+/).length : 0;
+      const minutes = Math.max(1, Math.round(words / 200));
+      return `${minutes} min read`;
+    }
+
+    function simpleMarkdownToHtml(markdown) {
+      const escape = (str) => str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      const lines = markdown.split('\n');
+      let html = '';
+      let inList = false;
+
+      for (const line of lines) {
+        if (line.trim() === '') {
+          if (inList) {
+            html += '</ul>';
+            inList = false;
+          }
+          continue;
+        }
+        if (line.startsWith('### ')) {
+          if (inList) {
+            html += '</ul>';
+            inList = false;
+          }
+          html += `<h3>${escape(line.slice(4))}</h3>`;
+          continue;
+        }
+        if (line.startsWith('## ')) {
+          if (inList) {
+            html += '</ul>';
+            inList = false;
+          }
+          html += `<h2>${escape(line.slice(3))}</h2>`;
+          continue;
+        }
+        if (line.startsWith('- ')) {
+          if (!inList) {
+            html += '<ul>';
+            inList = true;
+          }
+          html += `<li>${escape(line.slice(2))}</li>`;
+          continue;
+        }
+        if (inList) {
+          html += '</ul>';
+          inList = false;
+        }
+        html += `<p>${escape(line)}</p>`;
+      }
+
+      if (inList) html += '</ul>';
+      return html;
+    }
+
+    async function loadPost() {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('slug');
+      const meta = posts[slug];
+      const titleEl = document.getElementById('post-title');
+      const subtitleEl = document.getElementById('post-subtitle');
+      const metaEl = document.getElementById('post-meta');
+      const bodyEl = document.getElementById('post-body');
+
+      if (!slug || !meta) {
+        titleEl.textContent = 'Post not found';
+        bodyEl.innerHTML = '<p class="muted">The requested post is unavailable.</p>';
+        return;
+      }
+
+      titleEl.textContent = meta.title;
+      subtitleEl.textContent = meta.summary;
+      const inlineMd = postContent[slug] || '';
+      metaEl.textContent = `${new Date(meta.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })} · ${estimateReadTime(inlineMd)} · ${meta.tags.join(' · ')}`;
+
+      try {
+        const res = await fetch(`posts/${slug}.md`);
+        if (!res.ok) throw new Error('Fetch failed');
+        const md = await res.text();
+        bodyEl.innerHTML = simpleMarkdownToHtml(md || inlineMd);
+      } catch (err) {
+        if (inlineMd) {
+          bodyEl.innerHTML = simpleMarkdownToHtml(inlineMd);
+        } else {
+          bodyEl.innerHTML = '<p class="muted">Unable to load this post right now.</p>';
+        }
+      }
+    }
+
+    loadPost();
+  </script>
+</body>
+
+</html>
