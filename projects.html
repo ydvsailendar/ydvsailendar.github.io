@@ -76,6 +76,29 @@
         <div class="card-grid projects">
           <article class="card project-card">
             <header>
+              <h3>Serverless Email Ingestion & Relay Pipeline</h3>
+              <span class="tag">SES Inbound/Outbound • S3 • SQS</span>
+            </header>
+            <figure class="project-figure">
+              <img src="assets/projects/email-pipeline.svg" alt="Serverless email flow with SES inbound/outbound, S3, SQS, Lambda, and observability via CloudWatch and X-Ray." loading="lazy">
+            </figure>
+            <p class="project-summary">End-to-end email flow with SES rulesets, S3 storage, Lambda processing, and
+              reliable fan-out via SQS plus observability baked in.</p>
+            <ul class="project-points">
+              <li>SES inbound delivers to S3 prefix; S3 event triggers Lambda to parse metadata and push work messages
+                onto SQS while fetching raw content for processing.</li>
+              <li>Lambda workers pull from SQS, perform enrichment/operations, and send SES outbound responses; OTEL
+                collector layer streams traces to X-Ray and metrics/logs to CloudWatch.</li>
+              <li>CloudWatch alarms for delivery failures/DLQ depth; at-rest encryption and least-privilege IAM across
+                buckets, queues, and functions.</li>
+            </ul>
+            <div class="mini-pills">
+              <span>SES</span><span>S3 events</span><span>Lambda</span><span>OTEL/X-Ray</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <header>
               <h3>Multi-Tenant Content Delivery & AI-Powered Healthcare Platform</h3>
               <span class="tag">CloudFront OAC • Lambda • Bedrock</span>
             </header>

@@ -416,6 +416,20 @@ header.hero {
   gap: 12px;
 }
 
+.project-figure {
+  margin: 2px 0 4px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  background: var(--panel);
+}
+
+.project-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .project-summary {
   margin: 0;
   color: #dfe6f5;
