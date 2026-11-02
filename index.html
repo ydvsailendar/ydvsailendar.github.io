@@ -1,493 +1,1163 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shailendra Yadav | Platform & DataOps Engineer</title>
-  <meta name="description"
-    content="Shailendra Yadav — Senior Platform, DataOps & DevSecOps Engineer with 8+ years on AWS, Kubernetes, Terraform, Kafka, PostgreSQL, and multi-cloud infrastructure. Open to Platform Engineering, DataOps, AI Engineer, Enterprise AI, SRE, and DevSecOps roles in the UK.">
-  <meta name="keywords"
-    content="Platform Engineer, DataOps Engineer, AI Engineer, Enterprise AI, DevSecOps, SRE, AWS, GCP, Azure, Terraform, Kubernetes, Kafka, PostgreSQL, Prometheus, Grafana, Cloud Engineer, UK Visa Sponsorship">
-  <meta property="og:title" content="Shailendra Yadav | Platform & DataOps Engineer">
-  <meta property="og:description" content="Senior Platform & DataOps Engineer — AWS, Kubernetes, Terraform, Kafka, multi-cloud. 8+ years building reliable, observable, secure infrastructure.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://ydvsailendar.github.io/assets/site/profile.jpg">
-  <meta property="og:url" content="https://ydvsailendar.github.io/">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="assets/site/favicon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Shailendra Yadav</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Senior Platform &amp; Cloud Engineer — Platform, DataOps, AI, SRE, DevSecOps. 8+ years. UK-based. Open to Skilled Worker visa sponsorship.">
+<meta name="keywords" content="Platform Engineer, Cloud Engineer, DataOps Engineer, AI Engineer, Enterprise AI, SRE, DevSecOps, Infrastructure Engineer, Kubernetes, Terraform, AWS, GCP, Kafka, PostgreSQL, UK Skilled Worker Visa Sponsorship">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Mono:wght@400;500&display=swap">
+
+<style>
+/* ── Design tokens ──────────────────────────────────────────────────────────
+   Layout: sticky nav · full-width hero · grid sections · timeline
+   Palette: slate-navy bg · sky-cyan accent · warm-amber secondary
+   Type: Syne (display) + DM Sans (body) + DM Mono (labels / tech)
+ ─────────────────────────────────────────────────────────────────────────── */
+:root {
+  --bg:         #F4F6FB;
+  --bg-2:       #E9EDF4;
+  --bg-card:    #FFFFFF;
+  --fg:         #0B1220;
+  --fg-2:       #49596E;
+  --fg-3:       #8695A8;
+  --accent:     #0077CC;
+  --accent-2:   #D9500A;
+  --border:     #D5DBE6;
+  --chip-bg:    #DCEEFb;
+  --chip-fg:    #01569B;
+  --green:      #15803D;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:         #080C16;
+    --bg-2:       #0F1728;
+    --bg-card:    #131C2E;
+    --fg:         #DCE4EF;
+    --fg-2:       #7E95B2;
+    --fg-3:       #47607A;
+    --accent:     #38BDF8;
+    --accent-2:   #FB923C;
+    --border:     #1B2840;
+    --chip-bg:    #0A1E32;
+    --chip-fg:    #38BDF8;
+    --green:      #4ADE80;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+    --bg:         #080C16;
+    --bg-2:       #0F1728;
+    --bg-card:    #131C2E;
+    --fg:         #DCE4EF;
+    --fg-2:       #7E95B2;
+    --fg-3:       #47607A;
+    --accent:     #38BDF8;
+    --accent-2:   #FB923C;
+    --border:     #1B2840;
+    --chip-bg:    #0A1E32;
+    --chip-fg:    #38BDF8;
+    --green:      #4ADE80;
+    color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* safe-area top band behind sticky nav */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  background: var(--bg);
+  z-index: 101;
+}
+
+/* ── Navigation ── */
+nav {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding-block: 14px;
+  padding-left:  max(24px, env(safe-area-inset-left, 0px));
+  padding-right: max(24px, env(safe-area-inset-right, 0px));
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.nav-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--fg-3);
+  text-decoration: none;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  transition: color 0.18s;
+}
+.nav-links a:hover { color: var(--accent); }
+
+/* ── Page container ── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left:  max(24px, env(safe-area-inset-left, 0px));
+  padding-right: max(24px, env(safe-area-inset-right, 0px));
+}
+
+/* ── Hero ── */
+.hero {
+  padding-block: 88px 72px;
+  border-bottom: 1px solid var(--border);
+}
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+.hero-line { display: block; width: 28px; height: 1.5px; background: var(--accent); flex-shrink: 0; }
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(44px, 7.5vw, 84px);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.05em;
+  margin: 0 0 20px;
+  color: var(--fg);
+  text-wrap: balance;
+}
+h1 em { font-style: normal; color: var(--accent); }
+
+.hero-desc {
+  font-size: clamp(16px, 2.3vw, 19px);
+  color: var(--fg-2);
+  font-weight: 300;
+  max-width: 560px;
+  margin: 0 0 36px;
+  line-height: 1.6;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 40px;
+}
+.chip {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 500;
+  background: var(--chip-bg);
+  color: var(--chip-fg);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 9px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: opacity 0.18s, border-color 0.18s, color 0.18s;
+  white-space: nowrap;
+}
+.btn-primary { background: var(--accent); color: #fff; border: 1px solid transparent; }
+.btn-primary:hover { opacity: 0.87; }
+.btn-secondary {
+  background: transparent;
+  color: var(--fg-2);
+  border: 1px solid var(--border);
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Sections ── */
+.section {
+  padding-block: 72px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── Domains grid ── */
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.domain-card {
+  background: var(--bg-card);
+  padding: 28px 28px 30px;
+  transition: background 0.15s;
+}
+.domain-card:hover { background: var(--bg-2); }
+.domain-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+  display: block;
+}
+.domain-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+  color: var(--fg);
+  text-wrap: balance;
+}
+.domain-card p {
+  font-size: 13px;
+  color: var(--fg-2);
+  margin: 0;
+  line-height: 1.62;
+}
+
+/* ── Timeline ── */
+.timeline { display: flex; flex-direction: column; }
+.tl-item {
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  gap: 40px;
+  padding-block: 36px;
+  border-bottom: 1px solid var(--border);
+}
+.tl-item:last-child { border-bottom: none; }
+.tl-meta { padding-top: 3px; }
+.tl-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--fg-3);
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+.tl-badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--chip-fg);
+  background: var(--chip-bg);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+.tl-content h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0 0 3px;
+  color: var(--fg);
+}
+.tl-company {
+  font-size: 13px;
+  color: var(--fg-3);
+  margin-bottom: 14px;
+}
+.tl-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.tl-bullets li {
+  font-size: 13.5px;
+  color: var(--fg-2);
+  line-height: 1.6;
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  min-width: 0;
+}
+.tl-bullets li::before {
+  content: '▸';
+  font-size: 9px;
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tech-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  color: var(--fg-3);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+/* ── Projects ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 28px;
+  transition: border-color 0.18s;
+}
+.project-card:hover { border-color: var(--accent); }
+.project-card-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+.project-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+  display: block;
+}
+.project-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin: 0 0 10px;
+  color: var(--fg);
+}
+.project-card p {
+  font-size: 13.5px;
+  color: var(--fg-2);
+  margin: 0 0 0;
+  line-height: 1.62;
+}
+.arch-diagram {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-2);
+}
+.arch-diagram svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* SVG arch elements use CSS vars */
+.arch-node { fill: var(--bg-card); stroke: var(--border); stroke-width: 1; }
+.arch-node-accent { fill: var(--chip-bg); stroke: var(--accent); stroke-width: 1.5; }
+.arch-node-warm { fill: color-mix(in srgb, var(--accent-2) 10%, var(--bg-card)); stroke: var(--accent-2); stroke-width: 1; }
+.arch-text { fill: var(--fg); font-family: 'DM Mono', monospace; }
+.arch-sub { fill: var(--fg-3); font-family: 'DM Mono', monospace; }
+.arch-accent-text { fill: var(--accent); font-family: 'DM Mono', monospace; font-weight: 600; }
+.arch-band { fill: var(--bg-2); stroke: var(--border); stroke-width: 0.5; }
+.arch-band-text { fill: var(--fg-3); font-family: 'DM Mono', monospace; }
+@media (max-width: 640px) {
+  .project-card-top { grid-template-columns: 1fr; }
+}
+
+/* ── Stack ── */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px 40px;
+}
+.stack-group h4 {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin: 0 0 12px;
+}
+.stack-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.stack-list li {
+  font-size: 13px;
+  color: var(--fg-2);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+.stack-list li::before {
+  content: '→';
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ── Certification & Contact ── */
+.bottom-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 22px 26px;
+  white-space: nowrap;
+}
+.cert-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF9900 0%, #D97000 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.cert-info h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 3px;
+  letter-spacing: -0.015em;
+  color: var(--fg);
+}
+.cert-issuer {
+  font-size: 12px;
+  color: var(--fg-3);
+  margin-bottom: 6px;
+}
+.cert-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+}
+.cert-link:hover { text-decoration: underline; }
+
+.avail-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.avail-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--green) 22%, transparent);
+}
+.avail-main {
+  font-family: 'Syne', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--fg);
+  letter-spacing: -0.015em;
+}
+.avail-detail {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--fg-3);
+  letter-spacing: 0.03em;
+  margin-left: auto;
+}
+
+/* ── Footer ── */
+footer {
+  padding-block: 36px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 11.5px;
+  color: var(--fg-3);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.15s;
+}
+.footer-links a:hover { color: var(--accent); }
+.footer-loc {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--fg-3);
+  letter-spacing: 0.04em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .stack-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 760px) {
+  .domain-grid { grid-template-columns: repeat(2, 1fr); }
+  .stack-grid { grid-template-columns: repeat(2, 1fr); }
+  .projects-grid { grid-template-columns: 1fr; }
+  .bottom-grid { grid-template-columns: 1fr; }
+  .cert-card { white-space: normal; }
+  .avail-detail { margin-left: 0; }
+}
+@media (max-width: 640px) {
+  .hero { padding-block: 52px 44px; }
+  .section { padding-block: 52px; }
+  h1 { letter-spacing: -0.035em; }
+  .tl-item { grid-template-columns: 1fr; gap: 6px; }
+  .tl-meta { display: flex; align-items: center; gap: 12px; }
+  .domain-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+}
+@media (max-width: 420px) {
+  .stack-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+</style>
 </head>
-
 <body>
-  <div class="page">
-    <header class="hero" id="top">
-      <div class="nav">
-        <a class="logo" href="#top" aria-label="Back to top">
-          <img src="assets/site/profile.jpg" alt="Shailendra Yadav">
-        </a>
-        <nav>
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#skills">Skills</a>
-          <a href="#domains">Domains</a>
-          <a href="#projects">Projects</a>
-          <a href="#blog">Blog</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-      <div class="hero-content">
-        <div class="hero-text">
-          <p class="eyebrow">Platform · Cloud · DataOps · AI Engineer · Enterprise AI · DevSecOps · SRE</p>
-          <h1>Shailendra Yadav</h1>
-          <p class="lede">
-            Senior engineer with 8+ years building reliable, observable, and secure infrastructure across cloud and
-            data platforms. I run Kubernetes at scale, architect multi-cloud environments (AWS, GCP, Azure), operate
-            data pipelines on Kafka and PostgreSQL, and ship automation that keeps production calm.
-          </p>
-          <div class="actions">
-            <a class="primary" href="#contact">Contact Me</a>
-            <a class="ghost" href="mailto:yadavshailendra0905@gmail.com">yadavshailendra0905@gmail.com</a>
-          </div>
-          <div class="meta">
-            <span>Based in UK · Hemel Hempstead</span>
-            <span>Open to London / Remote</span>
-          </div>
-        </div>
-        <div class="hero-card">
-          <div class="stat">
-            <p class="label">Years in Prod</p>
-            <p class="value">8+</p>
-          </div>
-          <div class="stat">
-            <p class="label">Cloud</p>
-            <p class="value">AWS · GCP · Azure</p>
-          </div>
-          <div class="stat">
-            <p class="label">Focus</p>
-            <p class="value">Platform · DataOps</p>
-          </div>
-          <div class="badge">Kubernetes · Terraform · Kafka · PostgreSQL · Prometheus</div>
-        </div>
-      </div>
-    </header>
 
-    <main>
-      <section id="about" class="section">
-        <div class="section-head">
-          <p class="eyebrow">Profile</p>
-          <h2>About Me</h2>
-        </div>
-        <div class="text-grid">
-          <p>
-            I operate production infrastructure at the intersection of platform engineering, DataOps, and cloud
-            reliability. My work spans Kubernetes cluster operations, data pipeline infrastructure (Kafka, PostgreSQL,
-            Redis), multi-cloud IaC with Terraform, and end-to-end observability stacks with Prometheus and Grafana.
-            I started as a software engineer and grew into infrastructure — which means I understand both the systems
-            side and the developer experience they depend on.
-          </p>
-          <p>
-            Recent focus: stateful workloads in Kubernetes, database infrastructure reliability, AI platform
-            infrastructure (model serving, vector store ops, LLM pipeline CI/CD), and DevSecOps hardening across
-            multi-cloud environments. I value fast feedback loops, clear runbooks, and postmortems that drive
-            measurable MTTR/availability gains. Open to Skilled Worker visa sponsorship.
-          </p>
-        </div>
-      </section>
-
-      <section id="experience" class="section">
-        <div class="section-head">
-          <p class="eyebrow">Career</p>
-          <h2>Experience</h2>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content card">
-              <header>
-                <div>
-                  <p class="eyebrow">Jun 2023 – Present</p>
-                  <h3>Lead Platform / DevSecOps Engineer · Safedent</h3>
-                  <p class="sub">Hemel Hempstead, UK</p>
-                </div>
-                <span class="tag">EKS · Terraform · RDS · GitHub Actions</span>
-              </header>
-              <ul>
-                <li>Own reliability, scalability, and security of AWS-hosted production platforms running containerised and serverless workloads; improved uptime by ~40%.</li>
-                <li>Operate EKS clusters including stateful service deployments, persistent volume management, pod scheduling, and automated rollout/rollback strategies.</li>
-                <li>Manage PostgreSQL/Aurora and MySQL RDS instances across multi-environment fleet: backup, multi-AZ failover, performance tuning, and zero-downtime patching.</li>
-                <li>Built end-to-end observability with CloudWatch metrics, logs, dashboards, alarms, and X-Ray tracing — reduced incident detection time by over 40%.</li>
-                <li>Design and maintain reusable Terraform modules (EKS, RDS, VPC, IAM, CloudFront) enforcing IaC standards and eliminating environment drift.</li>
-                <li>Modernised CI/CD using GitHub Actions — ~30% faster deployment cycles with Trivy and SonarQube scanning gating all builds.</li>
-                <li>Strengthened cloud security: IAM hardening, Secrets Manager rotation, KMS encryption, Security Hub remediation.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content card">
-              <header>
-                <div>
-                  <p class="eyebrow">Apr 2020 – May 2023</p>
-                  <h3>Senior Site Reliability Engineer · CloudFactory</h3>
-                  <p class="sub">Reading, UK</p>
-                </div>
-                <span class="tag">ECS · EKS · Terraform · New Relic</span>
-              </header>
-              <ul>
-                <li>Led reliability and networking architecture for mission-critical AWS platform supporting large-scale data processing workloads.</li>
-                <li>Automated ECS cluster scaling with Lambda and EventBridge — ~35% compute cost reduction while maintaining SLA availability for data pipelines.</li>
-                <li>Built secure private connectivity: mTLS on ALB → ECS/API Gateway, VPC endpoint-only environment (100% private), PrivateLink, WAF.</li>
-                <li>Migrated observability to New Relic via Terraform — reduced alert noise by ~40% and improved MTTR through unified app + infra telemetry.</li>
-                <li>Developed standardised Terraform modules for ECS, EKS, VPCs, IAM, CloudFront, and load balancers — adopted as platform baseline by multiple squads.</li>
-                <li>Authored incident runbooks covering scaling failures, database connectivity, and network partition scenarios.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content card">
-              <header>
-                <div>
-                  <p class="eyebrow">Apr 2018 – Mar 2020</p>
-                  <h3>DevOps / Infrastructure Engineer · Bottle Technologies</h3>
-                  <p class="sub">Kathmandu, Nepal</p>
-                </div>
-                <span class="tag">Kafka · Prometheus · Grafana · Terraform</span>
-              </header>
-              <ul>
-                <li>Deployed and operated Apache Kafka clusters — producers, consumers, topic management, throughput and latency tuning for event-driven data pipelines.</li>
-                <li>Deployed Prometheus + Grafana observability stack; authored PromQL for custom service metrics, SLA tracking, and automated alerting.</li>
-                <li>Designed fault-tolerant, multi-AZ AWS infrastructure using Terraform: EC2, RDS (PostgreSQL/MySQL), ElastiCache (Redis), and VPC networking.</li>
-                <li>Managed multi-account AWS environments with Control Tower, Organizations, SCPs, and centralised logging.</li>
-                <li>Built Jenkins pipelines (DSL, JCasC) with SonarQube, Docker builds, and automated publishing — supporting multiple engineering teams.</li>
-                <li>Led cost-optimisation via autoscaling, right-sizing, and reserved capacity — ~20% reduction in cloud spend.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content card">
-              <header>
-                <div>
-                  <p class="eyebrow">Aug 2014 – Apr 2018</p>
-                  <h3>Software / Frontend Engineer · BlackSpade Financial Services</h3>
-                  <p class="sub">Kakinada, India</p>
-                </div>
-                <span class="tag">React · GraphQL · AWS · Node.js</span>
-              </header>
-              <ul>
-                <li>Shipped multilingual chat and IoT dashboards using React, GraphQL, and AWS IoT Core; integrated DynamoDB, S3, MongoDB, and Postgres.</li>
-                <li>Built admin portals with Cognito auth; documented APIs with Swagger/Postman; unit-tested with Jest.</li>
-                <li>Foundation for full-stack → infrastructure path: deep knowledge of application behaviour informing platform design decisions.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills" class="section">
-        <div class="section-head">
-          <p class="eyebrow">Stack</p>
-          <h2>Skills & Tools</h2>
-        </div>
-        <div class="pill-grid">
-          <div class="pill">Kubernetes (EKS, GKE) · Docker · Helm · ECS/Fargate — stateful &amp; stateless</div>
-          <div class="pill">AWS (EKS, ECS, Lambda, API Gateway, VPC, CloudFront, S3, MSK, EventBridge, SQS)</div>
-          <div class="pill">GCP (GKE, Cloud Run, BigQuery, Pub/Sub) · Azure (AKS, Azure DevOps, ADF) — familiar</div>
-          <div class="pill">Terraform (modular, multi-env) · Helm · CloudFormation · CDK · Ansible (familiar)</div>
-          <div class="pill">Databases: PostgreSQL/Aurora, MySQL, Redis (ElastiCache), DynamoDB, MSK/Kafka</div>
-          <div class="pill">Streaming: Kafka — producers, consumers, throughput tuning, topic management</div>
-          <div class="pill">Observability: Prometheus, Grafana, CloudWatch, New Relic, X-Ray, OTEL/ADOT</div>
-          <div class="pill">CI/CD: GitHub Actions, Jenkins, GitOps, ArgoCD — security scanning, IaC validation</div>
-          <div class="pill">Security: IAM least privilege, mTLS, PrivateLink, WAF, Secrets Manager, KMS, Security Hub</div>
-          <div class="pill">AI Engineer: LLM-powered pipelines, AI agents, AWS Bedrock, Transcribe, Comprehend — production model serving on Kubernetes</div>
-          <div class="pill">Scripting: Python (boto3), Bash/Shell, TypeScript/Node.js</div>
-          <div class="pill">Incident Response, RCA, capacity planning, disaster recovery, runbook authoring</div>
-        </div>
-      </section>
-
-      <section id="domains" class="section">
-        <div class="section-head">
-          <p class="eyebrow">Focus Areas</p>
-          <h2>Domains & Roles</h2>
-        </div>
-        <div class="card-grid domains">
-          <article class="card domain-card">
-            <h3>Platform Engineering</h3>
-            <p>Internal developer platforms on Kubernetes, Terraform, and GitOps. Multi-cloud IaC governance, reusable module design, environment parity.</p>
-          </article>
-          <article class="card domain-card">
-            <h3>DataOps & Data Infrastructure</h3>
-            <p>Database operations (PostgreSQL, MySQL, Redis), Kafka pipeline infrastructure, data platform reliability, backup and DR strategy.</p>
-          </article>
-          <article class="card domain-card">
-            <h3>AI Engineer & Enterprise AI</h3>
-            <p>Model serving infra on Kubernetes, LLM pipeline CI/CD, vector store operations, AI workflow observability. AWS Bedrock integrations.</p>
-          </article>
-          <article class="card domain-card">
-            <h3>DevSecOps & SRE</h3>
-            <p>Shift-left security scanning, IAM hardening, supply-chain controls, incident response, SLO-based alerting, MTTR improvement.</p>
-          </article>
-          <article class="card domain-card">
-            <h3>Cloud Architecture</h3>
-            <p>Multi-AZ, multi-account, and multi-cloud design. Private connectivity, zero-trust networking, cost governance, FinOps.</p>
-          </article>
-          <article class="card domain-card">
-            <h3>Observability</h3>
-            <p>Full-stack: Prometheus, Grafana, CloudWatch, New Relic, X-Ray, OTEL. Alerting strategy, golden signals, SLO dashboards.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="projects" class="section">
-        <div class="section-head">
-          <p class="eyebrow">Impact</p>
-          <h2>Selected Projects</h2>
-        </div>
-        <div class="card-grid projects">
-          <article class="card project-card">
-            <header>
-              <h3>Multi-Tenant AI Healthcare Delivery Platform</h3>
-              <span class="tag">CloudFront OAC · Lambda · Bedrock · Terraform</span>
-            </header>
-            <p class="project-summary">Built a secure, multi-tenant delivery layer with CloudFront OAC and signed URLs backed by API Gateway + Lambda (TypeScript), plus AI workflows using Bedrock, Transcribe, and Comprehend for transcription and translation pipelines.</p>
-            <div class="mini-pills">
-              <span>AI Engineer</span><span>Serverless</span><span>Observability</span><span>Multi-tenant</span>
-            </div>
-            <div class="project-cta">
-              <a class="primary" href="projects.html">View all projects</a>
-            </div>
-          </article>
-          <article class="card project-card">
-            <header>
-              <h3>Kafka Data Pipeline Infrastructure</h3>
-              <span class="tag">Kafka · Prometheus · Grafana · Terraform</span>
-            </header>
-            <p class="project-summary">Deployed and operated Apache Kafka clusters for high-volume event-driven data pipelines. Tuned producer/consumer throughput and latency; built Prometheus + Grafana observability with PromQL custom metrics and SLA alerting.</p>
-            <div class="mini-pills">
-              <span>DataOps</span><span>Streaming</span><span>Observability</span>
-            </div>
-          </article>
-          <article class="card project-card">
-            <header>
-              <h3>Platform Zero: Private AWS Architecture</h3>
-              <span class="tag">EKS · VPC Endpoints · mTLS · PrivateLink · Terraform</span>
-            </header>
-            <p class="project-summary">Designed a fully private AWS architecture: mTLS on ALB/ECS, 100% VPC endpoint-only connectivity, PrivateLink-exposed services, WAF, and org-signed certs — achieving zero public blast radius for internal platform services.</p>
-            <div class="mini-pills">
-              <span>Security</span><span>Platform Eng</span><span>Networking</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="blog" class="section">
-        <div class="section-head">
-          <p class="eyebrow">Writing</p>
-          <h2>Blog & Notes</h2>
-        </div>
-        <div id="blog-list" class="blog-list" aria-live="polite">
-          <div class="blog-placeholder">
-            <p>Loading notes on incident response, IaC patterns, Kafka, observability, and data infrastructure…</p>
-          </div>
-        </div>
-        <div class="blog-controls">
-          <a class="ghost" href="blog.html">View all posts</a>
-        </div>
-      </section>
-
-      <section id="contact" class="section contact">
-        <div class="section-head">
-          <p class="eyebrow">Let's Talk</p>
-          <h2>Contact Me</h2>
-        </div>
-        <div class="contact-card">
-          <p>Open to full-time roles in <strong>Platform Engineering, Cloud Engineering, DataOps, AI Engineer, Enterprise AI, SRE, DevSecOps,</strong> and <strong>Infrastructure Engineering</strong> across AWS, GCP, and Azure environments. Based in Hemel Hempstead, UK — happy with London or fully remote. Requires Skilled Worker visa sponsorship.</p>
-          <div class="contact-actions">
-            <a class="primary" href="mailto:yadavshailendra0905@gmail.com">Email Me</a>
-            <a class="ghost" href="tel:+447503117315">+44 7503 117315</a>
-            <a class="ghost" href="https://www.linkedin.com/in/ydvsailendar/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="ghost" href="https://github.com/ydvsailendar" target="_blank" rel="noreferrer">GitHub</a>
-          </div>
-          <div class="meta cert-row">
-            <span class="cert-title">Certifications</span>
-            <a class="pill-link" href="https://www.credly.com/badges/61b676ac-1350-4aab-9b4c-7b570a03bca5/public_url" target="_blank" rel="noreferrer">AWS DevOps Engineer – Professional</a>
-            <span class="dot">·</span>
-            <span>B.Tech Computer Science (JNTUK)</span>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <p>© <span id="year"></span> Shailendra Yadav · Platform & DataOps Engineering for Cloud-First Teams.</p>
-      <div class="footer-links">
-        <a href="#top">Back to top</a>
-      </div>
-    </footer>
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-name">Shailendra Yadav</a>
+    <ul class="nav-links">
+      <li><a href="#domains">Domains</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </div>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    if ('scrollBehavior' in document.documentElement.style === false) {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', (e) => {
-          e.preventDefault();
-          document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-        });
-      });
-    }
+</nav>
 
-    const posts = [
-      {
-        slug: 'multi-tenant-content-delivery',
-        title: 'CloudFront OAC + API Gateway: Multi-Tenant Content Delivery',
-        date: '2025-04-15',
-        tags: ['CloudFront', 'OAC', 'Serverless', 'Bedrock', 'Observability'],
-        summary: 'How I built a secure-by-default, AI-augmented delivery platform with CloudFront OAC, API Gateway + Lambda, and Bedrock-powered workflows.'
-      },
-      {
-        slug: 'container-filesystem-from-scratch',
-        title: 'How Container Filesystems Work (DIY Docker-lite)',
-        date: '2025-05-06',
-        tags: ['Containers', 'OverlayFS', 'Namespaces', 'Docker'],
-        summary: 'From rootfs and bind mounts to overlay copy-on-write: building a container-style filesystem with unshare/pivot_root.'
-      },
-      {
-        slug: 'incident-runbooks-mttr',
-        title: 'Incident Runbooks That Actually Reduce MTTR',
-        date: '2025-03-20',
-        tags: ['Incident Response', 'Runbooks', 'Observability', 'SRE'],
-        summary: 'A lightweight, actionable runbook pattern that keeps teams aligned under pressure and lowers time-to-detect and time-to-recover.'
-      }
-    ];
+<div class="container">
 
-    const postContent = {
-      'multi-tenant-content-delivery': `## CloudFront OAC + API Gateway: Multi-Tenant Content Delivery
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="hero-eyebrow">
+      <span class="hero-line"></span>
+      Available · Hemel Hempstead, UK · Skilled Worker Visa Sponsorship Required
+    </div>
+    <h1>Shailendra<br><em>Yadav</em></h1>
+    <p class="hero-desc">Senior Platform &amp; Cloud Engineer with 8+ years building production-grade infrastructure across cloud, data, and AI platforms.</p>
+    <div class="chips">
+      <span class="chip">Platform Engineering</span>
+      <span class="chip">Cloud Engineering</span>
+      <span class="chip">DataOps</span>
+      <span class="chip">AI Engineer · Enterprise AI</span>
+      <span class="chip">SRE</span>
+      <span class="chip">DevSecOps</span>
+      <span class="chip">Infrastructure Engineering</span>
+    </div>
+    <div class="hero-actions">
+      <a href="https://www.linkedin.com/in/ydvsailendar/" target="_blank" rel="noopener" class="btn btn-primary">LinkedIn</a>
+      <a href="https://github.com/ydvsailendar" target="_blank" rel="noopener" class="btn btn-secondary">GitHub</a>
+      <a href="mailto:yadavshailendra0905@gmail.com" class="btn btn-secondary">Email</a>
+    </div>
+  </section>
 
-### What I built
-- Locked down CloudFront with Origin Access Control (OAC) and signed cookies/URLs so every tenant's assets stay private by default.
-- Routed tenants with Route53 and per-tenant CDN behaviors that forward scoped headers to API Gateway + Lambda (TypeScript).
-- Added Bedrock + Transcribe + Comprehend + Translate for transcription and multilingual summaries inside the same pipeline.
+  <!-- Domains -->
+  <section class="section" id="domains">
+    <div class="section-label">What I work on</div>
+    <div class="domain-grid">
 
-### Reliability, security, and ops
-- End-to-end observability with CloudWatch metrics, logs, X-Ray traces, and alarms tied to Slack/SNS for low-noise paging.
-- IaC via Terraform + Serverless; reusable modules for CloudFront, S3 policies, VPC endpoints, and Lambda telemetry.
-- Latency-aware cache keys, shielded origins (no public S3/ALB), and least-privilege IAM for upload + access flows.
+      <div class="domain-card">
+        <span class="domain-num">01 · Platform</span>
+        <h3>Platform Engineering</h3>
+        <p>Kubernetes cluster operations (EKS/GKE), Terraform IaC at scale, GitOps workflows, internal developer platforms, and multi-environment infrastructure lifecycle management.</p>
+      </div>
 
-### Outcome
-- Delivered a secure, multi-tenant, AI-powered delivery layer that cut content latency and reduced manual ops while keeping costs predictable with serverless scale-to-zero.`,
-      'container-filesystem-from-scratch': `## How Container Filesystems Work (Building One from Scratch)
+      <div class="domain-card">
+        <span class="domain-num">02 · Cloud</span>
+        <h3>Cloud Engineering</h3>
+        <p>Multi-cloud architecture — AWS primary, GCP and Azure. Transit Gateway, cross-account VPC topology, PrivateLink, VPC endpoints, WAF, and multi-account AWS org networking.</p>
+      </div>
 
-### TL;DR
-- Containers isolate processes primarily with kernel namespaces; a container filesystem is just a rootfs tree + a chroot-like pivot + a set of bind mounts.
-- Union/overlay layers provide copy-on-write semantics so images stay read-only while containers get a writable upperdir.
-- You can assemble a minimal container runtime with unshare, pivot_root/chroot, and a few bind mounts — no Docker required.
+      <div class="domain-card">
+        <span class="domain-num">03 · DataOps</span>
+        <h3>DataOps &amp; Data Infrastructure</h3>
+        <p>Kafka/MSK pipeline operations, PostgreSQL/Aurora and Redis at scale, Prefect ETL orchestration, data ingestion pipelines, data warehousing, and financial reporting infrastructure.</p>
+      </div>
 
-### Steps I walked through
-- Create a minimal rootfs (e.g., Alpine busybox) and bind-mount /proc, /sys, /dev into it for basic tooling to work.
-- Use unshare -m -u -i -n -p to create new mount, UTS, IPC, network, and PID namespaces.
-- Perform pivot_root (or chroot) into the rootfs so PID 1 in the new namespace sees it as /.
-- Start a process (e.g., /bin/sh) inside the new namespace; from the outside it is just another host process with different namespaces.
-- Add OverlayFS for image layers: lowerdir(s) = image layers (read-only), upperdir = container writable layer, workdir = required scratch. Mount them together as the container's rootfs.
+      <div class="domain-card">
+        <span class="domain-num">04 · AI</span>
+        <h3>AI Engineer · Enterprise AI</h3>
+        <p>LLM-powered pipelines, AI agent infrastructure, AWS Bedrock, Transcribe, and Comprehend integrations, 3rd-party AI API production integrations, and model serving on Kubernetes.</p>
+      </div>
 
-### Why this matters
-- Namespaces handle isolation; cgroups handle resource limits; OverlayFS handles copy-on-write. Understanding these speeds up debugging and security reviews.`,
-      'incident-runbooks-mttr': `## Incident Runbooks That Actually Reduce MTTR
+      <div class="domain-card">
+        <span class="domain-num">05 · Security</span>
+        <h3>DevSecOps</h3>
+        <p>Shift-left scanning (Trivy, SonarQube), IAM least-privilege, KMS and Secrets Manager, Security Hub remediation, supply-chain controls, and mTLS end-to-end encryption.</p>
+      </div>
 
-### The problem
-- Runbooks often read like novels or are stale; responders skip steps, and MTTR drifts up.
-- Alerts lack context; people burn time rediscovering dashboards, feature flags, and owners.
+      <div class="domain-card">
+        <span class="domain-num">06 · Reliability</span>
+        <h3>SRE &amp; Observability</h3>
+        <p>Prometheus + Grafana stacks, CloudWatch, New Relic, and AWS X-Ray. SLO/SLA alerting, incident response runbooks, MTTR reduction, and post-incident review processes.</p>
+      </div>
 
-### The approach I use
-- Each runbook starts with a single-page checklist (who, where, what to check first) and a 5-minute rollback/mitigation path.
-- Link directly to golden dashboards and logs: CloudWatch metrics/alarms, X-Ray traces, Grafana, and service run logs.
-- Encode fast-fail tests (curl, health checks, feature-flag state) and escalation paths with SLAs.
-- Keep a timeline template for responders to note actions and timestamps—fuel for RCA later.
+    </div>
+  </section>
 
-### Results
-- Faster TTD/MTTR from context-rich alerts and clear mitigation.
-- Better RCAs due to captured timelines and consistent handoffs.`
-    };
+  <!-- Experience -->
+  <section class="section" id="experience">
+    <div class="section-label">Experience</div>
+    <div class="timeline">
 
-    function estimateReadTime(text) {
-      const words = text ? text.trim().split(/\s+/).length : 0;
-      const minutes = Math.max(1, Math.round(words / 200));
-      return `${minutes} min read`;
-    }
-
-    function simpleMarkdownToHtml(markdown) {
-      const escape = (str) => str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-      const lines = markdown.split('\n');
-      let html = '';
-      let inList = false;
-      for (const line of lines) {
-        if (line.trim() === '') {
-          if (inList) { html += '</ul>'; inList = false; }
-          continue;
-        }
-        if (line.startsWith('### ')) {
-          if (inList) { html += '</ul>'; inList = false; }
-          html += `<h3>${escape(line.slice(4))}</h3>`;
-          continue;
-        }
-        if (line.startsWith('## ')) {
-          if (inList) { html += '</ul>'; inList = false; }
-          html += `<h2>${escape(line.slice(3))}</h2>`;
-          continue;
-        }
-        if (line.startsWith('- ')) {
-          if (!inList) { html += '<ul>'; inList = true; }
-          html += `<li>${escape(line.slice(2))}</li>`;
-          continue;
-        }
-        if (inList) { html += '</ul>'; inList = false; }
-        html += `<p>${escape(line)}</p>`;
-      }
-      if (inList) html += '</ul>';
-      return html;
-    }
-
-    const homePostLimit = 1;
-
-    function renderHomeBlogs() {
-      const container = document.getElementById('blog-list');
-      container.innerHTML = '';
-      const slice = posts.slice(0, homePostLimit);
-      for (const post of slice) {
-        const article = document.createElement('a');
-        article.href = `post.html?slug=${encodeURIComponent(post.slug)}`;
-        article.className = 'card blog-card';
-        article.setAttribute('aria-label', `Read blog post: ${post.title}`);
-        const header = document.createElement('header');
-        header.innerHTML = `
-          <div>
-            <p class="eyebrow">${new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}</p>
-            <h3>${post.title}</h3>
+      <div class="tl-item">
+        <div class="tl-meta">
+          <div class="tl-date">Jun 2023<br>→ Present</div>
+          <span class="tl-badge">Full-time</span>
+        </div>
+        <div class="tl-content">
+          <h3>Lead DevOps / Infrastructure Engineer</h3>
+          <div class="tl-company">Safedent · Hemel Hempstead, UK</div>
+          <ul class="tl-bullets">
+            <li>Operate EKS clusters for containerised production healthcare workloads — stateful services, persistent volumes, autoscaling, and zero-downtime rollouts.</li>
+            <li>Manage PostgreSQL/Aurora and Redis across multiple environments: backup schedules, multi-AZ failover, performance tuning, and zero-downtime patching.</li>
+            <li>Designed Transit Gateway and private endpoints (PrivateLink, VPC endpoints) networking architecture; EC2-based ECS cluster management for legacy services.</li>
+            <li>Integrated 3rd-party facial recognition API in production; built data ingestion pipelines and automated financial reporting infrastructure.</li>
+            <li>Modernised CI/CD with GitHub Actions — security scanning (Trivy, SonarQube) gating every container build; reduced deployment cycle time 30%.</li>
+            <li>End-to-end observability with CloudWatch, X-Ray, and alarms — cut incident detection time by 40%.</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tech-tag">Kubernetes EKS</span>
+            <span class="tech-tag">Terraform</span>
+            <span class="tech-tag">PostgreSQL / Aurora</span>
+            <span class="tech-tag">Redis</span>
+            <span class="tech-tag">Transit Gateway</span>
+            <span class="tech-tag">GitHub Actions</span>
+            <span class="tech-tag">Trivy · SonarQube</span>
+            <span class="tech-tag">CloudWatch · X-Ray</span>
           </div>
-          <span class="tag">${post.tags.join(' · ')}</span>
-        `;
-        const body = document.createElement('div');
-        body.className = 'blog-body';
-        const content = postContent[post.slug] || '';
-        const readTime = estimateReadTime(content || post.summary);
-        body.innerHTML = `<p>${post.summary}</p><p class="muted">${readTime} · ${post.tags.join(' · ')}</p><span class="read-more">Read full →</span>`;
-        article.appendChild(header);
-        article.appendChild(body);
-        container.appendChild(article);
-      }
-    }
+        </div>
+      </div>
 
-    renderHomeBlogs();
-  </script>
+      <div class="tl-item">
+        <div class="tl-meta">
+          <div class="tl-date">Apr 2020<br>→ May 2023</div>
+          <span class="tl-badge">Full-time</span>
+        </div>
+        <div class="tl-content">
+          <h3>Senior Site Reliability Engineer</h3>
+          <div class="tl-company">CloudFactory · Reading, UK</div>
+          <ul class="tl-bullets">
+            <li>Led reliability and networking architecture for a mission-critical AWS platform supporting large-scale data annotation and processing workloads across multi-AZ environments.</li>
+            <li>Designed cross-account VPC topology with Transit Gateway, VPC endpoints, mTLS on ALB→ECS/API Gateway, and fully private connectivity — zero public blast radius.</li>
+            <li>Built Prefect-orchestrated ETL pipelines for data ingestion and warehousing; EC2-based ECS cluster capacity provider management and task placement strategies.</li>
+            <li>Automated ECS cluster scaling via Lambda and EventBridge — 35% compute cost reduction while maintaining SLA availability for high-throughput pipelines.</li>
+            <li>Migrated observability to New Relic via Terraform — reduced alert noise 40% and improved MTTR through unified app + infrastructure telemetry dashboards.</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tech-tag">ECS / EC2-based ECS</span>
+            <span class="tech-tag">Terraform</span>
+            <span class="tech-tag">Prefect</span>
+            <span class="tech-tag">Transit Gateway</span>
+            <span class="tech-tag">PrivateLink</span>
+            <span class="tech-tag">New Relic</span>
+            <span class="tech-tag">WAF</span>
+            <span class="tech-tag">mTLS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-meta">
+          <div class="tl-date">Apr 2018<br>→ Mar 2020</div>
+          <span class="tl-badge">Full-time</span>
+        </div>
+        <div class="tl-content">
+          <h3>DevOps / Infrastructure Engineer</h3>
+          <div class="tl-company">Bottle Technologies · Kathmandu, Nepal</div>
+          <ul class="tl-bullets">
+            <li>Deployed and operated Apache Kafka clusters for high-volume event-driven data pipelines — throughput tuning, consumer group management, and sustained-load optimisation.</li>
+            <li>Built Prometheus + Grafana observability stacks with PromQL dashboards, SLA tracking, and automated alerting — replacing all ad-hoc monitoring.</li>
+            <li>Implemented n8n for multi-source data routing, workflow automation, and data ingestion/warehousing across internal and partner data sources.</li>
+            <li>Built Jenkins Pipeline DSL + JCasC CI/CD infrastructure with SonarQube scans, Docker builds, and automated publishing across multiple engineering teams.</li>
+            <li>Managed multi-account AWS environments with Control Tower, SCPs, and centralised logging; led cost optimisation achieving 20% cloud spend reduction.</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tech-tag">Apache Kafka</span>
+            <span class="tech-tag">Prometheus · Grafana</span>
+            <span class="tech-tag">n8n</span>
+            <span class="tech-tag">Jenkins DSL · JCasC</span>
+            <span class="tech-tag">Terraform</span>
+            <span class="tech-tag">AWS Control Tower</span>
+            <span class="tech-tag">PostgreSQL · Redis</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-meta">
+          <div class="tl-date">Jun 2023<br>→ Jun 2024</div>
+          <span class="tl-badge">Freelance</span>
+        </div>
+        <div class="tl-content">
+          <h3>Cloud Backend Engineer</h3>
+          <div class="tl-company">ShopSwap · Greater London, UK</div>
+          <ul class="tl-bullets">
+            <li>Designed and deployed a serverless co-marketing backend on AWS Lambda, API Gateway, DynamoDB, RDS, and S3 with multi-tenant partner data segregation.</li>
+            <li>Provisioned full VPC networking with private subnets, security groups, and S3/DynamoDB VPC endpoints using CloudFormation IaC.</li>
+            <li>Containerised all services with Docker; implemented GitHub Actions CI/CD pipelines with ECR image publishing and automated integration tests.</li>
+            <li>Built webhook-driven data ingestion from affiliate networks and implemented Cognito OAuth 2.0 for multi-tenant authentication.</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tech-tag">AWS Lambda</span>
+            <span class="tech-tag">CloudFormation</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">GitHub Actions</span>
+            <span class="tech-tag">DynamoDB · RDS</span>
+            <span class="tech-tag">VPC Endpoints</span>
+            <span class="tech-tag">Cognito</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-meta">
+          <div class="tl-date">Jun 2021<br>→ Dec 2021</div>
+          <span class="tl-badge">Freelance</span>
+        </div>
+        <div class="tl-content">
+          <h3>Cloud Backend Engineer</h3>
+          <div class="tl-company">Preparie · Toronto, Canada (Remote)</div>
+          <ul class="tl-bullets">
+            <li>Built a fully serverless authentication platform on AWS Lambda and DynamoDB — handling user onboarding, session management, and secure credential storage at scale.</li>
+            <li>Designed a custom OAuth 2.0 PKCE flow with token rotation, device trust, refresh token management, and biometric integration for mobile clients.</li>
+            <li>Provisioned infrastructure with AWS SAM and CloudFormation; enforced least-privilege IAM per function and KMS encryption for credential storage.</li>
+            <li>Implemented GitHub Actions CI/CD for serverless deployments with integration tests and environment promotion across dev and staging stacks.</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tech-tag">AWS Lambda</span>
+            <span class="tech-tag">OAuth 2.0 PKCE</span>
+            <span class="tech-tag">DynamoDB</span>
+            <span class="tech-tag">KMS</span>
+            <span class="tech-tag">AWS SAM</span>
+            <span class="tech-tag">GitHub Actions</span>
+            <span class="tech-tag">Node.js · Python</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <div class="section-label">Projects</div>
+    <div class="projects-grid">
+
+      <!-- Beacon -->
+      <div class="project-card">
+        <div class="project-card-top">
+          <div>
+            <span class="project-label">DataOps · Financial Data Platform</span>
+            <h3>Beacon</h3>
+            <p>Financial data warehouse platform ingesting QuickBooks Online, Ramp, Plaid, and Carta into BigQuery. Custom Python connectors and Fivetran-managed pipelines feed raw tables; dbt transforms produce analytics-ready marts. All infrastructure provisioned with Terraform on GCP — datasets, IAM, service accounts, Secret Manager, and Fivetran destination as code.</p>
+            <div class="tech-tags" style="margin-top:16px">
+              <span class="tech-tag">BigQuery</span>
+              <span class="tech-tag">Terraform · GCP</span>
+              <span class="tech-tag">Fivetran</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">dbt</span>
+              <span class="tech-tag">Secret Manager</span>
+              <span class="tech-tag">Cloud Run</span>
+            </div>
+          </div>
+          <div class="arch-diagram">
+            <svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg" aria-label="Beacon architecture diagram">
+              <defs>
+                <marker id="ab" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+                  <path d="M0,1 L6,3.5 L0,6 Z" class="arch-sub" style="fill:var(--fg-3)"/>
+                </marker>
+              </defs>
+              <!-- Sources column -->
+              <text x="60" y="14" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">SOURCES</text>
+              <rect x="10" y="20" width="100" height="22" rx="4" class="arch-node"/>
+              <text x="60" y="35" class="arch-text" text-anchor="middle" font-size="9">QuickBooks Online</text>
+              <rect x="10" y="52" width="100" height="22" rx="4" class="arch-node"/>
+              <text x="60" y="67" class="arch-text" text-anchor="middle" font-size="9">Ramp</text>
+              <rect x="10" y="84" width="100" height="22" rx="4" class="arch-node"/>
+              <text x="60" y="99" class="arch-text" text-anchor="middle" font-size="9">Plaid</text>
+              <rect x="10" y="116" width="100" height="22" rx="4" class="arch-node"/>
+              <text x="60" y="131" class="arch-text" text-anchor="middle" font-size="9">Carta</text>
+              <!-- Arrows to ingestion -->
+              <line x1="110" y1="31" x2="148" y2="46" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
+              <line x1="110" y1="63" x2="148" y2="62" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
+              <line x1="110" y1="95" x2="148" y2="84" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
+              <line x1="110" y1="127" x2="148" y2="100" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
+              <!-- Ingestion -->
+              <text x="195" y="14" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">INGESTION</text>
+              <rect x="150" y="20" width="90" height="36" rx="4" class="arch-node-accent"/>
+              <text x="195" y="37" class="arch-accent-text" text-anchor="middle" font-size="9">Fivetran</text>
+              <text x="195" y="50" class="arch-sub" text-anchor="middle" font-size="8">Managed connectors</text>
+              <rect x="150" y="64" width="90" height="36" rx="4" class="arch-node"/>
+              <text x="195" y="79" class="arch-text" text-anchor="middle" font-size="9">Python</text>
+              <text x="195" y="92" class="arch-sub" text-anchor="middle" font-size="8">Custom connectors</text>
+              <!-- GCS intermediate -->
+              <rect x="150" y="108" width="90" height="24" rx="4" class="arch-node"/>
+              <text x="195" y="123" class="arch-sub" text-anchor="middle" font-size="8">GCS Landing Zone</text>
+              <line x1="195" y1="100" x2="195" y2="108" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
+              <!-- Arrows to BQ -->
+              <line x1="240" y1="38" x2="270" y2="60" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
+              <line x1="240" y1="82" x2="270" y2="74" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
+              <line x1="240" y1="120" x2="270" y2="86" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
+              <!-- BigQuery DW -->
+              <text x="315" y="14" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">WAREHOUSE</text>
+              <rect x="270" y="20" width="82" height="145" rx="6" class="arch-node-accent"/>
+              <text x="311" y="40" class="arch-accent-text" text-anchor="middle" font-size="10">BigQuery</text>
+              <line x1="278" y1="48" x2="344" y2="48" stroke="var(--accent)" stroke-width="0.5" opacity="0.4"/>
+              <text x="311" y="64" class="arch-sub" text-anchor="middle" font-size="8">Raw tables</text>
+              <text x="311" y="80" class="arch-sub" text-anchor="middle" font-size="8">↓ dbt models</text>
+              <text x="311" y="96" class="arch-sub" text-anchor="middle" font-size="8">Data marts</text>
+              <line x1="278" y1="108" x2="344" y2="108" stroke="var(--accent)" stroke-width="0.5" opacity="0.3"/>
+              <text x="311" y="125" class="arch-sub" text-anchor="middle" font-size="8">IAM · Policy</text>
+              <text x="311" y="141" class="arch-sub" text-anchor="middle" font-size="8">Tags · Retention</text>
+              <!-- Reports arrow down -->
+              <line x1="311" y1="165" x2="311" y2="185" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
+              <rect x="270" y="185" width="82" height="30" rx="4" class="arch-node-warm"/>
+              <text x="311" y="200" class="arch-text" text-anchor="middle" font-size="9">Reports &amp;</text>
+              <text x="311" y="210" class="arch-text" text-anchor="middle" font-size="9">Dashboards</text>
+              <!-- GCP band -->
+              <rect x="5" y="230" width="350" height="22" rx="3" class="arch-band"/>
+              <text x="180" y="244" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.09em">GCP · TERRAFORM MANAGED · SECRET MANAGER · SERVICE ACCOUNTS</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tactix -->
+      <div class="project-card">
+        <div class="project-card-top">
+          <div>
+            <span class="project-label">AI Engineer · Enterprise AI Platform</span>
+            <h3>Tactix</h3>
+            <p>Enterprise AI agent evaluation and data flow platform. Provides evidence packs, quality policies, and auditable release decisions for autonomous agent deployments. Multi-service architecture on GCP Cloud Run: agent tracing, data ingestion (Glutton), Prefect-orchestrated workflow pipelines, MCP server for tool integration, and a Next.js data flow platform — all backed by BigQuery, Pub/Sub, and GCS.</p>
+            <div class="tech-tags" style="margin-top:16px">
+              <span class="tech-tag">GCP Cloud Run</span>
+              <span class="tech-tag">Terraform</span>
+              <span class="tech-tag">Prefect</span>
+              <span class="tech-tag">BigQuery</span>
+              <span class="tech-tag">Pub/Sub</span>
+              <span class="tech-tag">MCP</span>
+              <span class="tech-tag">Artifact Registry</span>
+              <span class="tech-tag">AI Agents</span>
+            </div>
+          </div>
+          <div class="arch-diagram">
+            <svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg" aria-label="Tactix architecture diagram">
+              <defs>
+                <marker id="at" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+                  <path d="M0,1 L6,3.5 L0,6 Z" style="fill:var(--fg-3)"/>
+                </marker>
+              </defs>
+              <!-- Inputs -->
+              <text x="55" y="14" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">INPUTS</text>
+              <rect x="8" y="20" width="94" height="20" rx="3" class="arch-node"/>
+              <text x="55" y="34" class="arch-text" text-anchor="middle" font-size="8">External Data</text>
+              <rect x="8" y="48" width="94" height="20" rx="3" class="arch-node"/>
+              <text x="55" y="62" class="arch-text" text-anchor="middle" font-size="8">AI Agents (OTel)</text>
+              <rect x="8" y="76" width="94" height="20" rx="3" class="arch-node"/>
+              <text x="55" y="90" class="arch-text" text-anchor="middle" font-size="8">Workflows</text>
+              <rect x="8" y="104" width="94" height="20" rx="3" class="arch-node"/>
+              <text x="55" y="118" class="arch-text" text-anchor="middle" font-size="8">Tools / APIs</text>
+              <!-- Arrows to services -->
+              <line x1="102" y1="30" x2="130" y2="34" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
+              <line x1="102" y1="58" x2="130" y2="60" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
+              <line x1="102" y1="86" x2="130" y2="86" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
+              <line x1="102" y1="114" x2="130" y2="114" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
+              <!-- Cloud Run Services -->
+              <text x="190" y="14" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">CLOUD RUN SERVICES</text>
+              <rect x="130" y="20" width="122" height="24" rx="4" class="arch-node-accent"/>
+              <text x="191" y="36" class="arch-accent-text" text-anchor="middle" font-size="9">Glutton · Ingestion</text>
+              <rect x="130" y="50" width="122" height="24" rx="4" class="arch-node-accent"/>
+              <text x="191" y="66" class="arch-accent-text" text-anchor="middle" font-size="9">Agent · Evidence OS</text>
+              <rect x="130" y="80" width="122" height="24" rx="4" class="arch-node-accent"/>
+              <text x="191" y="96" class="arch-accent-text" text-anchor="middle" font-size="9">Prefect · Workflow</text>
+              <rect x="130" y="110" width="122" height="24" rx="4" class="arch-node-accent"/>
+              <text x="191" y="126" class="arch-accent-text" text-anchor="middle" font-size="9">MCP Server</text>
+              <!-- Pub/Sub -->
+              <rect x="130" y="146" width="122" height="22" rx="3" class="arch-node"/>
+              <text x="191" y="160" class="arch-text" text-anchor="middle" font-size="8">Pub/Sub Event Bus</text>
+              <line x1="191" y1="134" x2="191" y2="146" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
+              <!-- Arrows to storage -->
+              <line x1="252" y1="32" x2="276" y2="38" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
+              <line x1="252" y1="62" x2="276" y2="56" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
+              <line x1="252" y1="157" x2="276" y2="80" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
+              <!-- Storage -->
+              <text x="315" y="14" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">STORAGE</text>
+              <rect x="276" y="20" width="78" height="52" rx="5" class="arch-node-accent"/>
+              <text x="315" y="40" class="arch-accent-text" text-anchor="middle" font-size="9">BigQuery</text>
+              <text x="315" y="54" class="arch-sub" text-anchor="middle" font-size="8">Datasets</text>
+              <text x="315" y="65" class="arch-sub" text-anchor="middle" font-size="8">Tables · Views</text>
+              <rect x="276" y="80" width="78" height="30" rx="4" class="arch-node"/>
+              <text x="315" y="95" class="arch-text" text-anchor="middle" font-size="8">GCS Buckets</text>
+              <text x="315" y="105" class="arch-sub" text-anchor="middle" font-size="8">Archives · Cache</text>
+              <!-- Data flow platform -->
+              <rect x="276" y="120" width="78" height="48" rx="4" class="arch-node-warm"/>
+              <text x="315" y="137" class="arch-text" text-anchor="middle" font-size="8">Data Flow</text>
+              <text x="315" y="149" class="arch-text" text-anchor="middle" font-size="8">Platform</text>
+              <text x="315" y="162" class="arch-sub" text-anchor="middle" font-size="7">Next.js · API</text>
+              <line x1="252" y1="96" x2="276" y2="110" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
+              <line x1="252" y1="122" x2="276" y2="140" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
+              <!-- Artifact registry -->
+              <rect x="130" y="178" width="224" height="20" rx="3" class="arch-node"/>
+              <text x="242" y="191" class="arch-sub" text-anchor="middle" font-size="7" letter-spacing="0.05em">Artifact Registry · Docker Images · GitHub Actions CI/CD</text>
+              <!-- GCP band -->
+              <rect x="5" y="208" width="350" height="20" rx="3" class="arch-band"/>
+              <text x="180" y="221" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.09em">GCP · TERRAFORM MANAGED · IAM · WIF · CLOUD SCHEDULER</text>
+              <!-- Bottom note -->
+              <text x="180" y="244" class="arch-sub" text-anchor="middle" font-size="7">Evidence packs · Quality policies · Auditable agent release decisions</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Stack -->
+  <section class="section" id="stack">
+    <div class="section-label">Technical Stack</div>
+    <div class="stack-grid">
+
+      <div class="stack-group">
+        <h4>Orchestration</h4>
+        <ul class="stack-list">
+          <li>Kubernetes (EKS, GKE)</li>
+          <li>Docker &amp; Helm</li>
+          <li>ECS / EC2-based ECS</li>
+          <li>AWS Fargate</li>
+        </ul>
+      </div>
+
+      <div class="stack-group">
+        <h4>Infrastructure as Code</h4>
+        <ul class="stack-list">
+          <li>Terraform (modular, multi-env)</li>
+          <li>CloudFormation &amp; CDK</li>
+          <li>AWS SAM (serverless)</li>
+          <li>Helm charts</li>
+        </ul>
+      </div>
+
+      <div class="stack-group">
+        <h4>Databases &amp; Streaming</h4>
+        <ul class="stack-list">
+          <li>PostgreSQL / Aurora</li>
+          <li>Redis (ElastiCache)</li>
+          <li>DynamoDB · MySQL</li>
+          <li>Apache Kafka / MSK</li>
+        </ul>
+      </div>
+
+      <div class="stack-group">
+        <h4>DataOps &amp; Automation</h4>
+        <ul class="stack-list">
+          <li>Prefect (ETL orchestration)</li>
+          <li>n8n (workflow automation)</li>
+          <li>Fivetran · dbt</li>
+          <li>BigQuery · Redshift</li>
+        </ul>
+      </div>
+
+      <div class="stack-group">
+        <h4>Cloud &amp; Networking</h4>
+        <ul class="stack-list">
+          <li>AWS (primary) · GCP · Azure</li>
+          <li>Transit Gateway · PrivateLink</li>
+          <li>Cross-account VPC topology</li>
+          <li>WAF · Route53 · CloudFront</li>
+        </ul>
+      </div>
+
+      <div class="stack-group">
+        <h4>Observability</h4>
+        <ul class="stack-list">
+          <li>Prometheus + Grafana</li>
+          <li>New Relic · CloudWatch</li>
+          <li>AWS X-Ray · OTEL</li>
+          <li>Pingdom (familiar)</li>
+        </ul>
+      </div>
+
+      <div class="stack-group">
+        <h4>CI/CD &amp; Security</h4>
+        <ul class="stack-list">
+          <li>GitHub Actions</li>
+          <li>Jenkins (DSL + JCasC)</li>
+          <li>Trivy · SonarQube</li>
+          <li>Secrets Manager · KMS</li>
+        </ul>
+      </div>
+
+      <div class="stack-group">
+        <h4>AI &amp; Scripting</h4>
+        <ul class="stack-list">
+          <li>AWS Bedrock · Transcribe</li>
+          <li>AWS Comprehend</li>
+          <li>Python (boto3, automation)</li>
+          <li>Bash · Node.js · TypeScript</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Certification & Contact -->
+  <section class="section" style="border-bottom: none;" id="contact">
+    <div class="section-label">Certification &amp; Availability</div>
+    <div class="bottom-grid">
+
+      <div class="cert-card">
+        <div class="cert-icon">☁</div>
+        <div class="cert-info">
+          <h4>AWS DevOps Engineer – Professional</h4>
+          <div class="cert-issuer">Amazon Web Services</div>
+          <a href="https://www.credly.com/badges/61b676ac-1350-4aab-9b4c-7b570a03bca5/public_url" target="_blank" rel="noopener" class="cert-link">Verify on Credly →</a>
+        </div>
+      </div>
+
+      <div class="avail-card">
+        <div class="avail-dot"></div>
+        <span class="avail-main">Open to new opportunities</span>
+        <span class="avail-detail">Skilled Worker visa sponsorship required · London / Remote</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <ul class="footer-links">
+      <li><a href="https://www.linkedin.com/in/ydvsailendar/" target="_blank" rel="noopener">linkedin.com/in/ydvsailendar</a></li>
+      <li><a href="https://github.com/ydvsailendar" target="_blank" rel="noopener">github.com/ydvsailendar</a></li>
+      <li><a href="mailto:yadavshailendra0905@gmail.com">yadavshailendra0905@gmail.com</a></li>
+      <li><a href="tel:+447503117315">+44 7503 117315</a></li>
+    </ul>
+    <span class="footer-loc">Hemel Hempstead, UK</span>
+  </footer>
+
+</div>
 </body>
-
 </html>
