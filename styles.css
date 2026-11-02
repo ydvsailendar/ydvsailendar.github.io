@@ -406,6 +406,33 @@ header.hero {
   gap: 18px;
 }
 
+.domains {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.domain-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.domain-card h3 {
+  font-size: 1.05rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.domain-card p {
+  color: #ccd5e5;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.55;
+}
+
 .projects .card p {
   color: #d9dfeb;
 }
