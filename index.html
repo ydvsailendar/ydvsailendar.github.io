@@ -6,77 +6,71 @@
 <title>Shailendra Yadav</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Senior Platform &amp; Cloud Engineer — Platform, DataOps, AI, SRE, DevSecOps. 8+ years. UK-based. Open to Skilled Worker visa sponsorship.">
-<meta name="keywords" content="Platform Engineer, Cloud Engineer, DataOps Engineer, AI Engineer, Enterprise AI, SRE, DevSecOps, Infrastructure Engineer, Kubernetes, Terraform, AWS, GCP, Kafka, PostgreSQL, UK Skilled Worker Visa Sponsorship">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Mono:wght@400;500&display=swap">
-
 <style>
-/* ── Design tokens ──────────────────────────────────────────────────────────
-   Layout: sticky nav · full-width hero · grid sections · timeline
-   Palette: slate-navy bg · sky-cyan accent · warm-amber secondary
-   Type: Syne (display) + DM Sans (body) + DM Mono (labels / tech)
- ─────────────────────────────────────────────────────────────────────────── */
+/* ── Design tokens (Light-first) ─────────────────────────────────────── */
 :root {
-  --bg:         #F4F6FB;
-  --bg-2:       #E9EDF4;
-  --bg-card:    #FFFFFF;
-  --fg:         #0B1220;
-  --fg-2:       #49596E;
-  --fg-3:       #8695A8;
-  --accent:     #0077CC;
-  --accent-2:   #D9500A;
-  --border:     #D5DBE6;
-  --chip-bg:    #DCEEFb;
-  --chip-fg:    #01569B;
-  --green:      #15803D;
+  --bg:       #FAFAF8;
+  --bg-2:     #F1F4F8;
+  --bg-card:  #FFFFFF;
+  --fg:       #0F172A;
+  --fg-2:     #475569;
+  --fg-3:     #94A3B8;
+  --accent:   #0066CC;
+  --accent-2: #B45309;
+  --border:   #E2E8F0;
+  --chip-bg:  #EFF6FF;
+  --chip-fg:  #1D4ED8;
+  --green:    #16A34A;
+  --shadow:   0 1px 3px rgba(15,23,42,0.06), 0 4px 12px rgba(15,23,42,0.04);
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg:         #080C16;
-    --bg-2:       #0F1728;
-    --bg-card:    #131C2E;
-    --fg:         #DCE4EF;
-    --fg-2:       #7E95B2;
-    --fg-3:       #47607A;
-    --accent:     #38BDF8;
-    --accent-2:   #FB923C;
-    --border:     #1B2840;
-    --chip-bg:    #0A1E32;
-    --chip-fg:    #38BDF8;
-    --green:      #4ADE80;
+    --bg:       #080C16;
+    --bg-2:     #0F1728;
+    --bg-card:  #131C2E;
+    --fg:       #DCE4EF;
+    --fg-2:     #7E95B2;
+    --fg-3:     #47607A;
+    --accent:   #38BDF8;
+    --accent-2: #FB923C;
+    --border:   #1B2840;
+    --chip-bg:  #0A1E32;
+    --chip-fg:  #38BDF8;
+    --green:    #4ADE80;
+    --shadow:   0 1px 3px rgba(0,0,0,0.3), 0 4px 12px rgba(0,0,0,0.2);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-    --bg:         #080C16;
-    --bg-2:       #0F1728;
-    --bg-card:    #131C2E;
-    --fg:         #DCE4EF;
-    --fg-2:       #7E95B2;
-    --fg-3:       #47607A;
-    --accent:     #38BDF8;
-    --accent-2:   #FB923C;
-    --border:     #1B2840;
-    --chip-bg:    #0A1E32;
-    --chip-fg:    #38BDF8;
-    --green:      #4ADE80;
+    --bg:       #080C16;
+    --bg-2:     #0F1728;
+    --bg-card:  #131C2E;
+    --fg:       #DCE4EF;
+    --fg-2:     #7E95B2;
+    --fg-3:     #47607A;
+    --accent:   #38BDF8;
+    --accent-2: #FB923C;
+    --border:   #1B2840;
+    --chip-bg:  #0A1E32;
+    --chip-fg:  #38BDF8;
+    --green:    #4ADE80;
+    --shadow:   0 1px 3px rgba(0,0,0,0.3), 0 4px 12px rgba(0,0,0,0.2);
     color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-
 body {
   margin: 0;
   background: var(--bg);
   color: var(--fg);
   font-family: 'DM Sans', system-ui, sans-serif;
   font-size: 16px;
-  line-height: 1.65;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
-
-/* safe-area top band behind sticky nav */
 body::before {
   content: "";
   position: fixed;
@@ -85,13 +79,16 @@ body::before {
   background: var(--bg);
   z-index: 101;
 }
+img { max-width: 100%; }
 
-/* ── Navigation ── */
+/* ── Nav ── */
 nav {
   position: sticky;
   top: env(safe-area-inset-top, 0px);
   z-index: 100;
-  background: var(--bg);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   padding-block: 14px;
   padding-left:  max(24px, env(safe-area-inset-left, 0px));
@@ -105,13 +102,25 @@ nav {
   justify-content: space-between;
   gap: 16px;
 }
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.nav-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--border);
+}
 .nav-name {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: -0.03em;
   color: var(--fg);
-  text-decoration: none;
 }
 .nav-links {
   display: flex;
@@ -122,7 +131,7 @@ nav {
 }
 .nav-links a {
   font-family: 'DM Mono', monospace;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--fg-3);
   text-decoration: none;
@@ -132,7 +141,7 @@ nav {
 }
 .nav-links a:hover { color: var(--accent); }
 
-/* ── Page container ── */
+/* ── Container ── */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -142,26 +151,31 @@ nav {
 
 /* ── Hero ── */
 .hero {
-  padding-block: 88px 72px;
+  padding-block: 80px 72px;
   border-bottom: 1px solid var(--border);
+}
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 56px;
+  align-items: center;
 }
 .hero-eyebrow {
   display: flex;
   align-items: center;
   gap: 10px;
   font-family: 'DM Mono', monospace;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 24px;
 }
 .hero-line { display: block; width: 28px; height: 1.5px; background: var(--accent); flex-shrink: 0; }
-
 h1 {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(44px, 7.5vw, 84px);
+  font-size: clamp(40px, 6.5vw, 76px);
   font-weight: 800;
   line-height: 1.0;
   letter-spacing: -0.05em;
@@ -170,20 +184,19 @@ h1 {
   text-wrap: balance;
 }
 h1 em { font-style: normal; color: var(--accent); }
-
 .hero-desc {
-  font-size: clamp(16px, 2.3vw, 19px);
+  font-size: clamp(15px, 2.2vw, 18px);
   color: var(--fg-2);
-  font-weight: 300;
-  max-width: 560px;
-  margin: 0 0 36px;
-  line-height: 1.6;
+  font-weight: 400;
+  max-width: 520px;
+  margin: 0 0 32px;
+  line-height: 1.65;
 }
 .chips {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 .chip {
   font-family: 'DM Mono', monospace;
@@ -191,7 +204,7 @@ h1 em { font-style: normal; color: var(--accent); }
   font-weight: 500;
   background: var(--chip-bg);
   color: var(--chip-fg);
-  border: 1px solid var(--border);
+  border: 1px solid color-mix(in srgb, var(--accent) 15%, var(--border));
   padding: 4px 10px;
   border-radius: 4px;
   white-space: nowrap;
@@ -213,67 +226,70 @@ h1 em { font-style: normal; color: var(--accent); }
   padding: 9px 18px;
   border-radius: 6px;
   text-decoration: none;
-  transition: opacity 0.18s, border-color 0.18s, color 0.18s;
+  transition: opacity 0.18s, border-color 0.18s, color 0.18s, box-shadow 0.18s;
   white-space: nowrap;
 }
-.btn-primary { background: var(--accent); color: #fff; border: 1px solid transparent; }
-.btn-primary:hover { opacity: 0.87; }
-.btn-secondary {
-  background: transparent;
-  color: var(--fg-2);
-  border: 1px solid var(--border);
-}
+.btn-primary { background: var(--accent); color: #fff; border: 1px solid transparent; box-shadow: 0 1px 2px rgba(0,102,204,0.2); }
+.btn-primary:hover { opacity: 0.88; box-shadow: 0 4px 12px rgba(0,102,204,0.25); }
+.btn-secondary { background: var(--bg-card); color: var(--fg-2); border: 1px solid var(--border); box-shadow: var(--shadow); }
 .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Hero photo */
+.hero-photo { display: flex; justify-content: center; }
+.hero-photo-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border);
+  box-shadow: 0 8px 40px rgba(0,102,204,0.12), var(--shadow);
+  transition: box-shadow 0.3s;
+}
+.hero-photo-img:hover { box-shadow: 0 12px 48px rgba(0,102,204,0.2), var(--shadow); }
 
 /* ── Sections ── */
 .section {
   padding-block: 72px;
   border-bottom: 1px solid var(--border);
 }
-
 .section-label {
   font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 500;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--fg-3);
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 40px;
+  margin-bottom: 44px;
 }
-.section-label::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-}
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-/* ── Domains grid ── */
+/* ── Domain cards ── */
 .domain-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
 }
 .domain-card {
   background: var(--bg-card);
-  padding: 28px 28px 30px;
+  padding: 28px;
   transition: background 0.15s;
 }
 .domain-card:hover { background: var(--bg-2); }
 .domain-num {
   font-family: 'DM Mono', monospace;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   display: block;
 }
 .domain-card h3 {
@@ -281,16 +297,10 @@ h1 em { font-style: normal; color: var(--accent); }
   font-size: 15px;
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   color: var(--fg);
-  text-wrap: balance;
 }
-.domain-card p {
-  font-size: 13px;
-  color: var(--fg-2);
-  margin: 0;
-  line-height: 1.62;
-}
+.domain-card p { font-size: 13px; color: var(--fg-2); margin: 0; line-height: 1.65; }
 
 /* ── Timeline ── */
 .timeline { display: flex; flex-direction: column; }
@@ -302,11 +312,10 @@ h1 em { font-style: normal; color: var(--accent); }
   border-bottom: 1px solid var(--border);
 }
 .tl-item:last-child { border-bottom: none; }
-.tl-meta { padding-top: 3px; }
+.tl-meta { padding-top: 2px; }
 .tl-date {
   font-family: 'DM Mono', monospace;
   font-size: 11px;
-  font-weight: 500;
   color: var(--fg-3);
   letter-spacing: 0.04em;
   line-height: 1.7;
@@ -315,7 +324,7 @@ h1 em { font-style: normal; color: var(--accent); }
 .tl-badge {
   display: inline-block;
   font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 500;
   letter-spacing: 0.09em;
   text-transform: uppercase;
@@ -333,26 +342,22 @@ h1 em { font-style: normal; color: var(--accent); }
   margin: 0 0 3px;
   color: var(--fg);
 }
-.tl-company {
-  font-size: 13px;
-  color: var(--fg-3);
-  margin-bottom: 14px;
-}
+.tl-company { font-size: 13px; color: var(--fg-3); margin-bottom: 16px; }
 .tl-bullets {
   list-style: none;
   padding: 0;
   margin: 0 0 16px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 7px;
 }
 .tl-bullets li {
-  font-size: 13.5px;
+  font-size: 14px;
   color: var(--fg-2);
-  line-height: 1.6;
+  line-height: 1.65;
   display: flex;
   align-items: baseline;
-  gap: 9px;
+  gap: 10px;
   min-width: 0;
 }
 .tl-bullets li::before {
@@ -360,13 +365,8 @@ h1 em { font-style: normal; color: var(--accent); }
   font-size: 9px;
   color: var(--accent);
   flex-shrink: 0;
-  margin-top: 1px;
 }
-.tech-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
+.tech-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .tech-tag {
   font-family: 'DM Mono', monospace;
   font-size: 10.5px;
@@ -378,34 +378,33 @@ h1 em { font-style: normal; color: var(--accent); }
 }
 
 /* ── Projects ── */
-.projects-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-}
+.projects-grid { display: grid; gap: 20px; }
 .project-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 28px;
-  transition: border-color 0.18s;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
-.project-card:hover { border-color: var(--accent); }
+.project-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 24px rgba(0,102,204,0.08);
+}
 .project-card-top {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
   align-items: start;
-  margin-bottom: 24px;
 }
 .project-label {
   font-family: 'DM Mono', monospace;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent-2);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   display: block;
 }
 .project-card h3 {
@@ -416,62 +415,73 @@ h1 em { font-style: normal; color: var(--accent); }
   margin: 0 0 10px;
   color: var(--fg);
 }
-.project-card p {
-  font-size: 13.5px;
-  color: var(--fg-2);
-  margin: 0 0 0;
-  line-height: 1.62;
-}
+.project-card p { font-size: 14px; color: var(--fg-2); margin: 0; line-height: 1.65; }
+
+/* ── Architecture diagrams ── */
 .arch-diagram {
   width: 100%;
-  overflow: hidden;
   border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--bg-2);
+  overflow: hidden;
 }
-.arch-diagram svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-/* SVG arch elements use CSS vars */
-.arch-node { fill: var(--bg-card); stroke: var(--border); stroke-width: 1; }
+.arch-diagram svg { width: 100%; height: auto; display: block; }
+
+/* SVG CSS vars */
+.arch-node        { fill: var(--bg-card); stroke: var(--border); stroke-width: 1; }
 .arch-node-accent { fill: var(--chip-bg); stroke: var(--accent); stroke-width: 1.5; }
-.arch-node-warm { fill: color-mix(in srgb, var(--accent-2) 10%, var(--bg-card)); stroke: var(--accent-2); stroke-width: 1; }
-.arch-text { fill: var(--fg); font-family: 'DM Mono', monospace; }
-.arch-sub { fill: var(--fg-3); font-family: 'DM Mono', monospace; }
+.arch-node-warm   { fill: color-mix(in srgb, var(--accent-2) 10%, var(--bg-card)); stroke: var(--accent-2); stroke-width: 1; }
+.arch-text        { fill: var(--fg); font-family: 'DM Mono', monospace; }
+.arch-sub         { fill: var(--fg-3); font-family: 'DM Mono', monospace; }
 .arch-accent-text { fill: var(--accent); font-family: 'DM Mono', monospace; font-weight: 600; }
-.arch-band { fill: var(--bg-2); stroke: var(--border); stroke-width: 0.5; }
-.arch-band-text { fill: var(--fg-3); font-family: 'DM Mono', monospace; }
-@media (max-width: 640px) {
-  .project-card-top { grid-template-columns: 1fr; }
+.arch-band        { fill: var(--bg-2); stroke: var(--border); stroke-width: 0.5; }
+.arch-band-text   { fill: var(--fg-3); font-family: 'DM Mono', monospace; }
+.arch-warm-text   { fill: var(--accent-2); font-family: 'DM Mono', monospace; font-weight: 600; }
+
+/* Flow animation */
+@keyframes dash-flow {
+  from { stroke-dashoffset: 20; }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes node-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.arch-diagram.animated .flow-line {
+  stroke-dasharray: 6 4;
+  animation: dash-flow 0.7s linear infinite;
+}
+.arch-diagram.animated .flow-line.d1 { animation-delay: 0.1s; }
+.arch-diagram.animated .flow-line.d2 { animation-delay: 0.2s; }
+.arch-diagram.animated .flow-line.d3 { animation-delay: 0.3s; }
+.arch-diagram.animated .flow-line.d4 { animation-delay: 0.4s; }
+.arch-diagram.animated .flow-line.d5 { animation-delay: 0.5s; }
+.arch-diagram.animated .flow-line.d6 { animation-delay: 0.6s; }
+.arch-diagram.animated .arch-node,
+.arch-diagram.animated .arch-node-accent,
+.arch-diagram.animated .arch-node-warm,
+.arch-diagram.animated .arch-band {
+  animation: node-fade 0.5s ease forwards;
 }
 
 /* ── Stack ── */
 .stack-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px 40px;
+  gap: 36px 40px;
 }
 .stack-group h4 {
   font-family: 'DM Mono', monospace;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent-2);
   margin: 0 0 12px;
 }
-.stack-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
+.stack-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
 .stack-list li {
-  font-size: 13px;
+  font-size: 13.5px;
   color: var(--fg-2);
   display: flex;
   align-items: baseline;
@@ -486,7 +496,7 @@ h1 em { font-style: normal; color: var(--accent); }
   flex-shrink: 0;
 }
 
-/* ── Certification & Contact ── */
+/* ── Cert / Availability ── */
 .bottom-grid {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -499,109 +509,75 @@ h1 em { font-style: normal; color: var(--accent); }
   gap: 18px;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 22px 26px;
   white-space: nowrap;
+  box-shadow: var(--shadow);
 }
 .cert-icon {
-  width: 50px;
-  height: 50px;
+  width: 48px; height: 48px;
   border-radius: 50%;
   background: linear-gradient(135deg, #FF9900 0%, #D97000 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
 }
-.cert-info h4 {
-  font-family: 'Syne', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  margin: 0 0 3px;
-  letter-spacing: -0.015em;
-  color: var(--fg);
-}
-.cert-issuer {
-  font-size: 12px;
-  color: var(--fg-3);
-  margin-bottom: 6px;
-}
-.cert-link {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  color: var(--accent);
-  text-decoration: none;
-  letter-spacing: 0.03em;
-}
+.cert-info h4 { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; margin: 0 0 3px; letter-spacing: -0.015em; color: var(--fg); }
+.cert-issuer  { font-size: 12px; color: var(--fg-3); margin-bottom: 6px; }
+.cert-link    { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); text-decoration: none; letter-spacing: 0.03em; }
 .cert-link:hover { text-decoration: underline; }
-
 .avail-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 22px 26px;
   display: flex;
   align-items: center;
   gap: 14px;
   flex-wrap: wrap;
+  box-shadow: var(--shadow);
 }
 .avail-dot {
-  width: 9px;
-  height: 9px;
+  width: 9px; height: 9px;
   border-radius: 50%;
   background: var(--green);
   flex-shrink: 0;
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--green) 22%, transparent);
+  animation: pulse 2s ease-in-out infinite;
 }
-.avail-main {
-  font-family: 'Syne', sans-serif;
-  font-size: 14.5px;
-  font-weight: 700;
-  color: var(--fg);
-  letter-spacing: -0.015em;
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--green) 22%, transparent); }
+  50%       { box-shadow: 0 0 0 6px color-mix(in srgb, var(--green) 10%, transparent); }
 }
-.avail-detail {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  color: var(--fg-3);
-  letter-spacing: 0.03em;
-  margin-left: auto;
-}
+.avail-main   { font-family: 'Syne', sans-serif; font-size: 14.5px; font-weight: 700; color: var(--fg); letter-spacing: -0.015em; }
+.avail-detail { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--fg-3); letter-spacing: 0.03em; margin-left: auto; }
 
 /* ── Footer ── */
 footer {
   padding-block: 36px;
-  border-top: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 14px;
 }
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.footer-links a {
-  font-family: 'DM Mono', monospace;
-  font-size: 11.5px;
-  color: var(--fg-3);
-  text-decoration: none;
-  letter-spacing: 0.03em;
-  transition: color 0.15s;
-}
+.footer-links { display: flex; flex-wrap: wrap; gap: 20px; list-style: none; padding: 0; margin: 0; }
+.footer-links a { font-family: 'DM Mono', monospace; font-size: 11.5px; color: var(--fg-3); text-decoration: none; letter-spacing: 0.03em; transition: color 0.15s; }
 .footer-links a:hover { color: var(--accent); }
-.footer-loc {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  color: var(--fg-3);
-  letter-spacing: 0.04em;
+.footer-loc { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--fg-3); letter-spacing: 0.04em; }
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1);
 }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal.d1 { transition-delay: 0.05s; }
+.reveal.d2 { transition-delay: 0.12s; }
+.reveal.d3 { transition-delay: 0.19s; }
+.reveal.d4 { transition-delay: 0.26s; }
+.reveal.d5 { transition-delay: 0.33s; }
+.reveal.d6 { transition-delay: 0.40s; }
 
 /* ── Responsive ── */
 @media (max-width: 960px) {
@@ -609,11 +585,13 @@ footer {
 }
 @media (max-width: 760px) {
   .domain-grid { grid-template-columns: repeat(2, 1fr); }
-  .stack-grid { grid-template-columns: repeat(2, 1fr); }
-  .projects-grid { grid-template-columns: 1fr; }
+  .stack-grid  { grid-template-columns: repeat(2, 1fr); }
   .bottom-grid { grid-template-columns: 1fr; }
-  .cert-card { white-space: normal; }
+  .cert-card   { white-space: normal; }
   .avail-detail { margin-left: 0; }
+  .hero-layout { grid-template-columns: 1fr; gap: 32px; }
+  .hero-photo  { order: -1; }
+  .hero-photo-img { width: 120px; height: 120px; }
 }
 @media (max-width: 640px) {
   .hero { padding-block: 52px 44px; }
@@ -622,22 +600,26 @@ footer {
   .tl-item { grid-template-columns: 1fr; gap: 6px; }
   .tl-meta { display: flex; align-items: center; gap: 12px; }
   .domain-grid { grid-template-columns: 1fr; }
+  .project-card-top { grid-template-columns: 1fr; }
   .nav-links { display: none; }
 }
 @media (max-width: 420px) {
   .stack-grid { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; }
+  *, .reveal, .arch-diagram.animated .flow-line { transition: none !important; animation: none !important; }
+  .reveal { opacity: 1; transform: none; }
 }
 </style>
 </head>
 <body>
 
-<!-- Navigation -->
 <nav>
   <div class="nav-inner">
-    <a href="#top" class="nav-name">Shailendra Yadav</a>
+    <a href="#top" class="nav-brand">
+      <img src="https://avatars.githubusercontent.com/u/30329780?v=4" alt="" class="nav-avatar" loading="eager">
+      <span class="nav-name">Shailendra Yadav</span>
+    </a>
     <ul class="nav-links">
       <li><a href="#domains">Domains</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -652,25 +634,32 @@ footer {
 
   <!-- Hero -->
   <section class="hero" id="top">
-    <div class="hero-eyebrow">
-      <span class="hero-line"></span>
-      Available · Hemel Hempstead, UK · Skilled Worker Visa Sponsorship Required
-    </div>
-    <h1>Shailendra<br><em>Yadav</em></h1>
-    <p class="hero-desc">Senior Platform &amp; Cloud Engineer with 8+ years building production-grade infrastructure across cloud, data, and AI platforms.</p>
-    <div class="chips">
-      <span class="chip">Platform Engineering</span>
-      <span class="chip">Cloud Engineering</span>
-      <span class="chip">DataOps</span>
-      <span class="chip">AI Engineer · Enterprise AI</span>
-      <span class="chip">SRE</span>
-      <span class="chip">DevSecOps</span>
-      <span class="chip">Infrastructure Engineering</span>
-    </div>
-    <div class="hero-actions">
-      <a href="https://www.linkedin.com/in/ydvsailendar/" target="_blank" rel="noopener" class="btn btn-primary">LinkedIn</a>
-      <a href="https://github.com/ydvsailendar" target="_blank" rel="noopener" class="btn btn-secondary">GitHub</a>
-      <a href="mailto:yadavshailendra0905@gmail.com" class="btn btn-secondary">Email</a>
+    <div class="hero-layout">
+      <div class="hero-text">
+        <div class="hero-eyebrow">
+          <span class="hero-line"></span>
+          Available · Hemel Hempstead, UK · Skilled Worker Visa Sponsorship Required
+        </div>
+        <h1>Shailendra<br><em>Yadav</em></h1>
+        <p class="hero-desc">Senior Platform &amp; Cloud Engineer with 8+ years building production-grade infrastructure across cloud, data, and AI platforms.</p>
+        <div class="chips">
+          <span class="chip">Platform Engineering</span>
+          <span class="chip">Cloud Engineering</span>
+          <span class="chip">DataOps</span>
+          <span class="chip">AI Engineer · Enterprise AI</span>
+          <span class="chip">SRE</span>
+          <span class="chip">DevSecOps</span>
+          <span class="chip">Infrastructure Engineering</span>
+        </div>
+        <div class="hero-actions">
+          <a href="https://www.linkedin.com/in/ydvsailendar/" target="_blank" rel="noopener" class="btn btn-primary">LinkedIn</a>
+          <a href="https://github.com/ydvsailendar" target="_blank" rel="noopener" class="btn btn-secondary">GitHub</a>
+          <a href="mailto:yadavshailendra0905@gmail.com" class="btn btn-secondary">Email</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="https://avatars.githubusercontent.com/u/30329780?v=4" alt="Shailendra Yadav" class="hero-photo-img" width="200" height="200" loading="eager">
+      </div>
     </div>
   </section>
 
@@ -678,43 +667,36 @@ footer {
   <section class="section" id="domains">
     <div class="section-label">What I work on</div>
     <div class="domain-grid">
-
-      <div class="domain-card">
+      <div class="domain-card reveal d1">
         <span class="domain-num">01 · Platform</span>
         <h3>Platform Engineering</h3>
         <p>Kubernetes cluster operations (EKS/GKE), Terraform IaC at scale, GitOps workflows, internal developer platforms, and multi-environment infrastructure lifecycle management.</p>
       </div>
-
-      <div class="domain-card">
+      <div class="domain-card reveal d2">
         <span class="domain-num">02 · Cloud</span>
         <h3>Cloud Engineering</h3>
         <p>Multi-cloud architecture — AWS primary, GCP and Azure. Transit Gateway, cross-account VPC topology, PrivateLink, VPC endpoints, WAF, and multi-account AWS org networking.</p>
       </div>
-
-      <div class="domain-card">
+      <div class="domain-card reveal d3">
         <span class="domain-num">03 · DataOps</span>
         <h3>DataOps &amp; Data Infrastructure</h3>
         <p>Kafka/MSK pipeline operations, PostgreSQL/Aurora and Redis at scale, Prefect ETL orchestration, data ingestion pipelines, data warehousing, and financial reporting infrastructure.</p>
       </div>
-
-      <div class="domain-card">
+      <div class="domain-card reveal d4">
         <span class="domain-num">04 · AI</span>
         <h3>AI Engineer · Enterprise AI</h3>
         <p>LLM-powered pipelines, AI agent infrastructure, AWS Bedrock, Transcribe, and Comprehend integrations, 3rd-party AI API production integrations, and model serving on Kubernetes.</p>
       </div>
-
-      <div class="domain-card">
+      <div class="domain-card reveal d5">
         <span class="domain-num">05 · Security</span>
         <h3>DevSecOps</h3>
         <p>Shift-left scanning (Trivy, SonarQube), IAM least-privilege, KMS and Secrets Manager, Security Hub remediation, supply-chain controls, and mTLS end-to-end encryption.</p>
       </div>
-
-      <div class="domain-card">
+      <div class="domain-card reveal d6">
         <span class="domain-num">06 · Reliability</span>
         <h3>SRE &amp; Observability</h3>
         <p>Prometheus + Grafana stacks, CloudWatch, New Relic, and AWS X-Ray. SLO/SLA alerting, incident response runbooks, MTTR reduction, and post-incident review processes.</p>
       </div>
-
     </div>
   </section>
 
@@ -723,7 +705,7 @@ footer {
     <div class="section-label">Experience</div>
     <div class="timeline">
 
-      <div class="tl-item">
+      <div class="tl-item reveal">
         <div class="tl-meta">
           <div class="tl-date">Jun 2023<br>→ Present</div>
           <span class="tl-badge">Full-time</span>
@@ -752,7 +734,7 @@ footer {
         </div>
       </div>
 
-      <div class="tl-item">
+      <div class="tl-item reveal">
         <div class="tl-meta">
           <div class="tl-date">Apr 2020<br>→ May 2023</div>
           <span class="tl-badge">Full-time</span>
@@ -780,7 +762,7 @@ footer {
         </div>
       </div>
 
-      <div class="tl-item">
+      <div class="tl-item reveal">
         <div class="tl-meta">
           <div class="tl-date">Apr 2018<br>→ Mar 2020</div>
           <span class="tl-badge">Full-time</span>
@@ -807,7 +789,7 @@ footer {
         </div>
       </div>
 
-      <div class="tl-item">
+      <div class="tl-item reveal">
         <div class="tl-meta">
           <div class="tl-date">Jun 2023<br>→ Jun 2024</div>
           <span class="tl-badge">Freelance</span>
@@ -833,7 +815,7 @@ footer {
         </div>
       </div>
 
-      <div class="tl-item">
+      <div class="tl-item reveal">
         <div class="tl-meta">
           <div class="tl-date">Jun 2021<br>→ Dec 2021</div>
           <span class="tl-badge">Freelance</span>
@@ -864,11 +846,231 @@ footer {
 
   <!-- Projects -->
   <section class="section" id="projects">
-    <div class="section-label">Projects</div>
+    <div class="section-label">Architecture &amp; Projects</div>
     <div class="projects-grid">
 
+      <!-- Cross-account PrivateLink + mTLS -->
+      <div class="project-card reveal">
+        <div class="project-card-top">
+          <div>
+            <span class="project-label">Cloud Networking · Security</span>
+            <h3>Cross-Account PrivateLink + mTLS</h3>
+            <p>Zero-public-exposure service architecture used at CloudFactory. Cross-account connectivity via AWS PrivateLink with NLB→ALB chain, mTLS mutual certificate verification at the ALB, and a private API Gateway — hostname continuity preserved, no traffic ever leaving the AWS backbone. Baseline ~$150–200/month driven by always-on NLB and endpoint infrastructure.</p>
+            <div class="tech-tags" style="margin-top:16px">
+              <span class="tech-tag">PrivateLink · NLB</span>
+              <span class="tech-tag">mTLS · ALB</span>
+              <span class="tech-tag">Private API Gateway</span>
+              <span class="tech-tag">VPC Endpoints</span>
+              <span class="tech-tag">ACM · IAM</span>
+              <span class="tech-tag">Terraform</span>
+            </div>
+          </div>
+          <div class="arch-diagram">
+            <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" aria-label="Cross-account PrivateLink architecture">
+              <defs>
+                <marker id="a1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                  <path d="M0,1 L5,3 L0,5 Z" style="fill:var(--fg-3)"/>
+                </marker>
+              </defs>
+              <!-- Consumer Account -->
+              <rect x="5" y="5" width="148" height="150" rx="5" class="arch-band"/>
+              <text x="79" y="20" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">CONSUMER ACCOUNT</text>
+              <rect x="18" y="30" width="122" height="28" rx="4" class="arch-node"/>
+              <text x="79" y="44" class="arch-text" text-anchor="middle" font-size="9">Client Application</text>
+              <text x="79" y="55" class="arch-sub" text-anchor="middle" font-size="7">VPC Private Subnet</text>
+              <line x1="79" y1="58" x2="79" y2="78" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a1)" class="flow-line"/>
+              <rect x="18" y="78" width="122" height="32" rx="4" class="arch-node-accent"/>
+              <text x="79" y="93" class="arch-accent-text" text-anchor="middle" font-size="9">VPC Endpoint</text>
+              <text x="79" y="105" class="arch-sub" text-anchor="middle" font-size="7">Interface · PrivateLink</text>
+              <line x1="79" y1="110" x2="79" y2="130" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a1)" class="flow-line d1"/>
+              <rect x="18" y="130" width="122" height="20" rx="3" class="arch-node"/>
+              <text x="79" y="144" class="arch-sub" text-anchor="middle" font-size="8">Private DNS resolution</text>
+              <!-- Cross-account arrow -->
+              <line x1="153" y1="94" x2="203" y2="94" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#a1)" class="flow-line d2" style="stroke:var(--accent)"/>
+              <text x="178" y="89" class="arch-accent-text" text-anchor="middle" font-size="7">cross</text>
+              <text x="178" y="100" class="arch-accent-text" text-anchor="middle" font-size="7">account</text>
+              <!-- Provider Account -->
+              <rect x="203" y="5" width="152" height="205" rx="5" class="arch-band"/>
+              <text x="279" y="20" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">PROVIDER ACCOUNT</text>
+              <rect x="216" y="28" width="126" height="26" rx="4" class="arch-node"/>
+              <text x="279" y="40" class="arch-text" text-anchor="middle" font-size="9">NLB</text>
+              <text x="279" y="50" class="arch-sub" text-anchor="middle" font-size="7">Network Load Balancer</text>
+              <line x1="279" y1="54" x2="279" y2="68" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a1)" class="flow-line d3"/>
+              <line x1="279" y1="28" x2="279" y2="8" stroke="var(--fg-3)" stroke-width="0.5" opacity="0.4"/>
+              <!-- NLB connects to endpoint service -->
+              <rect x="216" y="68" width="126" height="30" rx="4" class="arch-node-warm"/>
+              <text x="279" y="82" class="arch-warm-text" text-anchor="middle" font-size="9">ALB + mTLS</text>
+              <text x="279" y="93" class="arch-sub" text-anchor="middle" font-size="7">Mutual TLS · ACM Certs</text>
+              <line x1="279" y1="98" x2="279" y2="112" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a1)" class="flow-line d4"/>
+              <rect x="216" y="112" width="126" height="30" rx="4" class="arch-node-accent"/>
+              <text x="279" y="126" class="arch-accent-text" text-anchor="middle" font-size="9">Private API Gateway</text>
+              <text x="279" y="137" class="arch-sub" text-anchor="middle" font-size="7">VPC Endpoint policy</text>
+              <line x1="279" y1="142" x2="279" y2="156" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a1)" class="flow-line d5"/>
+              <rect x="216" y="156" width="126" height="26" rx="4" class="arch-node"/>
+              <text x="279" y="168" class="arch-text" text-anchor="middle" font-size="9">Lambda / ECS Services</text>
+              <text x="279" y="178" class="arch-sub" text-anchor="middle" font-size="7">Private subnets · IAM</text>
+              <!-- Bottom note -->
+              <text x="180" y="215" class="arch-sub" text-anchor="middle" font-size="6.5">No public IPs · No inbound internet · All traffic private</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bastion-less AWS Access -->
+      <div class="project-card reveal">
+        <div class="project-card-top">
+          <div>
+            <span class="project-label">Security · Operations</span>
+            <h3>Bastion-less AWS Access (SSM)</h3>
+            <p>Operational access architecture eliminating bastions and SSH keys entirely. Systems Manager Session Manager and EC2/ECS Exec provide shell access to public and private subnet instances without inbound connectivity. Private subnets operate without NAT via SSM VPC interface endpoints. CloudTrail attributes every session to an IAM identity with KMS-encrypted session transcripts for full auditability.</p>
+            <div class="tech-tags" style="margin-top:16px">
+              <span class="tech-tag">SSM Session Manager</span>
+              <span class="tech-tag">EC2/ECS Exec</span>
+              <span class="tech-tag">VPC Endpoints</span>
+              <span class="tech-tag">KMS</span>
+              <span class="tech-tag">CloudTrail</span>
+              <span class="tech-tag">IAM</span>
+            </div>
+          </div>
+          <div class="arch-diagram">
+            <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" aria-label="Bastion-less AWS access architecture">
+              <defs>
+                <marker id="a2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                  <path d="M0,1 L5,3 L0,5 Z" style="fill:var(--fg-3)"/>
+                </marker>
+              </defs>
+              <!-- Developers -->
+              <text x="40" y="14" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">CLIENTS</text>
+              <rect x="5" y="20" width="70" height="24" rx="4" class="arch-node"/>
+              <text x="40" y="35" class="arch-text" text-anchor="middle" font-size="8">Developer CLI</text>
+              <rect x="5" y="52" width="70" height="24" rx="4" class="arch-node"/>
+              <text x="40" y="67" class="arch-text" text-anchor="middle" font-size="8">CI/CD Bot</text>
+              <!-- SSM Service -->
+              <text x="155" y="14" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">SSM SERVICE</text>
+              <rect x="100" y="20" width="110" height="40" rx="4" class="arch-node-accent"/>
+              <text x="155" y="37" class="arch-accent-text" text-anchor="middle" font-size="9">Systems Manager</text>
+              <text x="155" y="51" class="arch-sub" text-anchor="middle" font-size="7">AWS Managed · HTTPS 443</text>
+              <!-- arrows from clients to SSM -->
+              <line x1="75" y1="32" x2="100" y2="36" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a2)" class="flow-line"/>
+              <line x1="75" y1="64" x2="100" y2="50" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a2)" class="flow-line d1"/>
+              <!-- VPC -->
+              <rect x="220" y="8" width="135" height="130" rx="5" class="arch-band"/>
+              <text x="287" y="22" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">VPC</text>
+              <!-- VPC endpoints -->
+              <rect x="228" y="28" width="119" height="28" rx="3" class="arch-node-accent"/>
+              <text x="287" y="41" class="arch-accent-text" text-anchor="middle" font-size="8">VPC Interface Endpoints</text>
+              <text x="287" y="51" class="arch-sub" text-anchor="middle" font-size="6.5">ssm · ssmmessages · ec2messages</text>
+              <!-- SSM → VPC endpoints -->
+              <line x1="210" y1="40" x2="228" y2="40" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a2)" class="flow-line d2"/>
+              <!-- EC2 / ECS targets -->
+              <line x1="287" y1="56" x2="287" y2="70" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a2)" class="flow-line d3"/>
+              <rect x="228" y="70" width="55" height="28" rx="3" class="arch-node"/>
+              <text x="255" y="83" class="arch-text" text-anchor="middle" font-size="8">EC2</text>
+              <text x="255" y="93" class="arch-sub" text-anchor="middle" font-size="6.5">public + private</text>
+              <rect x="290" y="70" width="57" height="28" rx="3" class="arch-node"/>
+              <text x="318" y="83" class="arch-text" text-anchor="middle" font-size="8">ECS Tasks</text>
+              <text x="318" y="93" class="arch-sub" text-anchor="middle" font-size="6.5">ECS Exec</text>
+              <!-- Audit layer -->
+              <rect x="228" y="108" width="119" height="24" rx="3" class="arch-node-warm"/>
+              <text x="287" y="122" class="arch-warm-text" text-anchor="middle" font-size="8">No inbound · No SSH · No bastion</text>
+              <!-- Audit row -->
+              <text x="180" y="158" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">AUDIT &amp; LOGGING</text>
+              <rect x="5" y="164" width="100" height="30" rx="4" class="arch-node"/>
+              <text x="55" y="177" class="arch-text" text-anchor="middle" font-size="8">CloudTrail</text>
+              <text x="55" y="188" class="arch-sub" text-anchor="middle" font-size="6.5">Who · What · When</text>
+              <rect x="115" y="164" width="100" height="30" rx="4" class="arch-node"/>
+              <text x="165" y="177" class="arch-text" text-anchor="middle" font-size="8">KMS + CW Logs</text>
+              <text x="165" y="188" class="arch-sub" text-anchor="middle" font-size="6.5">Encrypted transcripts</text>
+              <rect x="225" y="164" width="130" height="30" rx="4" class="arch-node-accent"/>
+              <text x="290" y="177" class="arch-accent-text" text-anchor="middle" font-size="8">S3 Session Archive</text>
+              <text x="290" y="188" class="arch-sub" text-anchor="middle" font-size="6.5">Compliance retention</text>
+              <line x1="155" y1="138" x2="55" y2="164" stroke="var(--fg-3)" stroke-width="0.8" marker-end="url(#a2)" class="flow-line d4"/>
+              <line x1="155" y1="138" x2="165" y2="164" stroke="var(--fg-3)" stroke-width="0.8" marker-end="url(#a2)" class="flow-line d5"/>
+              <line x1="287" y1="138" x2="290" y2="164" stroke="var(--fg-3)" stroke-width="0.8" marker-end="url(#a2)" class="flow-line d6"/>
+              <!-- Connector from SSM to audit -->
+              <line x1="155" y1="60" x2="155" y2="138" stroke="var(--fg-3)" stroke-width="0.5" opacity="0.3"/>
+              <rect x="110" y="130" width="90" height="16" rx="3" class="arch-node"/>
+              <text x="155" y="141" class="arch-sub" text-anchor="middle" font-size="6.5">IAM · Session metadata</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- EC2 Lifecycle Automation -->
+      <div class="project-card reveal">
+        <div class="project-card-top">
+          <div>
+            <span class="project-label">Automation · Cost Engineering</span>
+            <h3>EC2 Lifecycle Automation</h3>
+            <p>Event-driven infrastructure that ties CloudWatch dashboards, alarms, and EBS volumes to EC2 lifecycle events — so observability artifacts are runtime resources, not long-lived infrastructure. In non-prod, everything disappears when instances stop. In prod, dashboards and alarms recover automatically with the instance. EBS orphan detection runs on termination events to prevent storage cost leakage.</p>
+            <div class="tech-tags" style="margin-top:16px">
+              <span class="tech-tag">EventBridge</span>
+              <span class="tech-tag">Lambda</span>
+              <span class="tech-tag">CloudWatch</span>
+              <span class="tech-tag">EBS</span>
+              <span class="tech-tag">Python · boto3</span>
+              <span class="tech-tag">Terraform</span>
+            </div>
+          </div>
+          <div class="arch-diagram">
+            <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" aria-label="EC2 Lifecycle Automation architecture">
+              <defs>
+                <marker id="a3" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                  <path d="M0,1 L5,3 L0,5 Z" style="fill:var(--fg-3)"/>
+                </marker>
+              </defs>
+              <!-- EC2 Events -->
+              <text x="55" y="14" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">EC2 EVENTS</text>
+              <rect x="5" y="20" width="100" height="20" rx="3" class="arch-node-accent"/>
+              <text x="55" y="34" class="arch-accent-text" text-anchor="middle" font-size="9">Launch / Start</text>
+              <rect x="5" y="48" width="100" height="20" rx="3" class="arch-node"/>
+              <text x="55" y="61" class="arch-text" text-anchor="middle" font-size="9">Stop</text>
+              <rect x="5" y="76" width="100" height="20" rx="3" class="arch-node-warm"/>
+              <text x="55" y="89" class="arch-warm-text" text-anchor="middle" font-size="9">Terminate</text>
+              <!-- EventBridge -->
+              <line x1="105" y1="30" x2="138" y2="54" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a3)" class="flow-line"/>
+              <line x1="105" y1="58" x2="138" y2="64" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a3)" class="flow-line d1"/>
+              <line x1="105" y1="86" x2="138" y2="74" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a3)" class="flow-line d2"/>
+              <rect x="138" y="46" width="90" height="36" rx="5" class="arch-node-accent"/>
+              <text x="183" y="62" class="arch-accent-text" text-anchor="middle" font-size="9">EventBridge</text>
+              <text x="183" y="74" class="arch-sub" text-anchor="middle" font-size="7">Rule-based routing</text>
+              <line x1="228" y1="64" x2="255" y2="64" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a3)" class="flow-line d3"/>
+              <!-- Lambda -->
+              <rect x="255" y="46" width="100" height="36" rx="5" class="arch-node-accent"/>
+              <text x="305" y="62" class="arch-accent-text" text-anchor="middle" font-size="9">Lambda</text>
+              <text x="305" y="74" class="arch-sub" text-anchor="middle" font-size="7">Event dispatcher</text>
+              <!-- Non-prod branch -->
+              <rect x="5" y="130" width="162" height="80" rx="5" class="arch-band"/>
+              <text x="86" y="145" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">NON-PROD POLICY</text>
+              <rect x="14" y="152" width="66" height="22" rx="3" class="arch-node"/>
+              <text x="47" y="166" class="arch-text" text-anchor="middle" font-size="7.5">CW Dashboards</text>
+              <text x="47" y="176" class="arch-sub" text-anchor="middle" font-size="6">create/delete</text>
+              <rect x="90" y="152" width="68" height="22" rx="3" class="arch-node"/>
+              <text x="124" y="166" class="arch-text" text-anchor="middle" font-size="7.5">CW Alarms</text>
+              <text x="124" y="176" class="arch-sub" text-anchor="middle" font-size="6">create/delete</text>
+              <rect x="14" y="182" width="144" height="20" rx="3" class="arch-node-warm"/>
+              <text x="86" y="195" class="arch-warm-text" text-anchor="middle" font-size="7">Infrastructure stops → observability disappears</text>
+              <!-- Prod branch -->
+              <rect x="183" y="130" width="172" height="80" rx="5" class="arch-band"/>
+              <text x="269" y="145" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">PROD POLICY</text>
+              <rect x="191" y="152" width="68" height="22" rx="3" class="arch-node-accent"/>
+              <text x="225" y="162" class="arch-accent-text" text-anchor="middle" font-size="7.5">CW auto-recover</text>
+              <text x="225" y="172" class="arch-sub" text-anchor="middle" font-size="6">scale / rebuild</text>
+              <rect x="270" y="152" width="76" height="22" rx="3" class="arch-node-accent"/>
+              <text x="308" y="162" class="arch-accent-text" text-anchor="middle" font-size="7.5">EBS Cleanup</text>
+              <text x="308" y="172" class="arch-sub" text-anchor="middle" font-size="6">orphan detection</text>
+              <rect x="191" y="182" width="155" height="20" rx="3" class="arch-node"/>
+              <text x="268" y="195" class="arch-sub" text-anchor="middle" font-size="7">Prod recovers · Storage cost leak prevented</text>
+              <!-- arrows from Lambda to branches -->
+              <line x1="305" y1="82" x2="86" y2="130" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a3)" class="flow-line d4"/>
+              <line x1="305" y1="82" x2="269" y2="130" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a3)" class="flow-line d5"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
       <!-- Beacon -->
-      <div class="project-card">
+      <div class="project-card reveal">
         <div class="project-card-top">
           <div>
             <span class="project-label">DataOps · Financial Data Platform</span>
@@ -881,78 +1083,71 @@ footer {
               <span class="tech-tag">Python</span>
               <span class="tech-tag">dbt</span>
               <span class="tech-tag">Secret Manager</span>
-              <span class="tech-tag">Cloud Run</span>
             </div>
           </div>
           <div class="arch-diagram">
-            <svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg" aria-label="Beacon architecture diagram">
+            <svg viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" aria-label="Beacon architecture diagram">
               <defs>
-                <marker id="ab" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-                  <path d="M0,1 L6,3.5 L0,6 Z" class="arch-sub" style="fill:var(--fg-3)"/>
+                <marker id="a4" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                  <path d="M0,1 L5,3 L0,5 Z" style="fill:var(--fg-3)"/>
                 </marker>
               </defs>
-              <!-- Sources column -->
               <text x="60" y="14" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">SOURCES</text>
               <rect x="10" y="20" width="100" height="22" rx="4" class="arch-node"/>
               <text x="60" y="35" class="arch-text" text-anchor="middle" font-size="9">QuickBooks Online</text>
-              <rect x="10" y="52" width="100" height="22" rx="4" class="arch-node"/>
-              <text x="60" y="67" class="arch-text" text-anchor="middle" font-size="9">Ramp</text>
-              <rect x="10" y="84" width="100" height="22" rx="4" class="arch-node"/>
-              <text x="60" y="99" class="arch-text" text-anchor="middle" font-size="9">Plaid</text>
-              <rect x="10" y="116" width="100" height="22" rx="4" class="arch-node"/>
-              <text x="60" y="131" class="arch-text" text-anchor="middle" font-size="9">Carta</text>
-              <!-- Arrows to ingestion -->
-              <line x1="110" y1="31" x2="148" y2="46" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
-              <line x1="110" y1="63" x2="148" y2="62" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
-              <line x1="110" y1="95" x2="148" y2="84" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
-              <line x1="110" y1="127" x2="148" y2="100" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
+              <rect x="10" y="50" width="100" height="22" rx="4" class="arch-node"/>
+              <text x="60" y="65" class="arch-text" text-anchor="middle" font-size="9">Ramp (spend)</text>
+              <rect x="10" y="80" width="100" height="22" rx="4" class="arch-node"/>
+              <text x="60" y="95" class="arch-text" text-anchor="middle" font-size="9">Plaid (banking)</text>
+              <rect x="10" y="110" width="100" height="22" rx="4" class="arch-node"/>
+              <text x="60" y="125" class="arch-text" text-anchor="middle" font-size="9">Carta (equity)</text>
+              <!-- arrows to ingestion -->
+              <line x1="110" y1="31" x2="148" y2="46" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a4)" class="flow-line"/>
+              <line x1="110" y1="61" x2="148" y2="61" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a4)" class="flow-line d1"/>
+              <line x1="110" y1="91" x2="148" y2="82" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a4)" class="flow-line d2"/>
+              <line x1="110" y1="121" x2="148" y2="98" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a4)" class="flow-line d3"/>
               <!-- Ingestion -->
               <text x="195" y="14" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">INGESTION</text>
-              <rect x="150" y="20" width="90" height="36" rx="4" class="arch-node-accent"/>
-              <text x="195" y="37" class="arch-accent-text" text-anchor="middle" font-size="9">Fivetran</text>
-              <text x="195" y="50" class="arch-sub" text-anchor="middle" font-size="8">Managed connectors</text>
-              <rect x="150" y="64" width="90" height="36" rx="4" class="arch-node"/>
-              <text x="195" y="79" class="arch-text" text-anchor="middle" font-size="9">Python</text>
-              <text x="195" y="92" class="arch-sub" text-anchor="middle" font-size="8">Custom connectors</text>
-              <!-- GCS intermediate -->
-              <rect x="150" y="108" width="90" height="24" rx="4" class="arch-node"/>
-              <text x="195" y="123" class="arch-sub" text-anchor="middle" font-size="8">GCS Landing Zone</text>
-              <line x1="195" y1="100" x2="195" y2="108" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
-              <!-- Arrows to BQ -->
-              <line x1="240" y1="38" x2="270" y2="60" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
-              <line x1="240" y1="82" x2="270" y2="74" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
-              <line x1="240" y1="120" x2="270" y2="86" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
+              <rect x="150" y="20" width="90" height="34" rx="4" class="arch-node-accent"/>
+              <text x="195" y="36" class="arch-accent-text" text-anchor="middle" font-size="9">Fivetran</text>
+              <text x="195" y="48" class="arch-sub" text-anchor="middle" font-size="7">Managed connectors</text>
+              <rect x="150" y="62" width="90" height="34" rx="4" class="arch-node"/>
+              <text x="195" y="78" class="arch-text" text-anchor="middle" font-size="9">Python</text>
+              <text x="195" y="90" class="arch-sub" text-anchor="middle" font-size="7">Custom connectors</text>
+              <!-- arrows to BQ -->
+              <line x1="240" y1="37" x2="265" y2="60" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a4)" class="flow-line d4"/>
+              <line x1="240" y1="79" x2="265" y2="76" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a4)" class="flow-line d5"/>
               <!-- BigQuery DW -->
-              <text x="315" y="14" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">WAREHOUSE</text>
-              <rect x="270" y="20" width="82" height="145" rx="6" class="arch-node-accent"/>
-              <text x="311" y="40" class="arch-accent-text" text-anchor="middle" font-size="10">BigQuery</text>
-              <line x1="278" y1="48" x2="344" y2="48" stroke="var(--accent)" stroke-width="0.5" opacity="0.4"/>
-              <text x="311" y="64" class="arch-sub" text-anchor="middle" font-size="8">Raw tables</text>
-              <text x="311" y="80" class="arch-sub" text-anchor="middle" font-size="8">↓ dbt models</text>
-              <text x="311" y="96" class="arch-sub" text-anchor="middle" font-size="8">Data marts</text>
-              <line x1="278" y1="108" x2="344" y2="108" stroke="var(--accent)" stroke-width="0.5" opacity="0.3"/>
-              <text x="311" y="125" class="arch-sub" text-anchor="middle" font-size="8">IAM · Policy</text>
-              <text x="311" y="141" class="arch-sub" text-anchor="middle" font-size="8">Tags · Retention</text>
-              <!-- Reports arrow down -->
-              <line x1="311" y1="165" x2="311" y2="185" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#ab)"/>
-              <rect x="270" y="185" width="82" height="30" rx="4" class="arch-node-warm"/>
-              <text x="311" y="200" class="arch-text" text-anchor="middle" font-size="9">Reports &amp;</text>
-              <text x="311" y="210" class="arch-text" text-anchor="middle" font-size="9">Dashboards</text>
+              <text x="310" y="14" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">WAREHOUSE</text>
+              <rect x="265" y="20" width="88" height="130" rx="6" class="arch-node-accent"/>
+              <text x="309" y="42" class="arch-accent-text" text-anchor="middle" font-size="10">BigQuery</text>
+              <line x1="272" y1="50" x2="345" y2="50" stroke="var(--accent)" stroke-width="0.5" opacity="0.4"/>
+              <text x="309" y="66" class="arch-sub" text-anchor="middle" font-size="8">Raw tables</text>
+              <text x="309" y="82" class="arch-sub" text-anchor="middle" font-size="8">↓ dbt models</text>
+              <text x="309" y="98" class="arch-sub" text-anchor="middle" font-size="8">Data marts</text>
+              <line x1="272" y1="108" x2="345" y2="108" stroke="var(--accent)" stroke-width="0.5" opacity="0.3"/>
+              <text x="309" y="124" class="arch-sub" text-anchor="middle" font-size="7">IAM · Tags</text>
+              <text x="309" y="138" class="arch-sub" text-anchor="middle" font-size="7">Retention policy</text>
+              <!-- Reports -->
+              <line x1="309" y1="150" x2="309" y2="168" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a4)" class="flow-line d6"/>
+              <rect x="265" y="168" width="88" height="28" rx="4" class="arch-node-warm"/>
+              <text x="309" y="181" class="arch-warm-text" text-anchor="middle" font-size="9">Reports &amp;</text>
+              <text x="309" y="193" class="arch-warm-text" text-anchor="middle" font-size="9">Dashboards</text>
               <!-- GCP band -->
-              <rect x="5" y="230" width="350" height="22" rx="3" class="arch-band"/>
-              <text x="180" y="244" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.09em">GCP · TERRAFORM MANAGED · SECRET MANAGER · SERVICE ACCOUNTS</text>
+              <rect x="5" y="208" width="350" height="22" rx="3" class="arch-band"/>
+              <text x="180" y="222" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.08em">GCP · TERRAFORM · SECRET MANAGER · SERVICE ACCOUNTS</text>
             </svg>
           </div>
         </div>
       </div>
 
       <!-- Tactix -->
-      <div class="project-card">
+      <div class="project-card reveal">
         <div class="project-card-top">
           <div>
             <span class="project-label">AI Engineer · Enterprise AI Platform</span>
             <h3>Tactix</h3>
-            <p>Enterprise AI agent evaluation and data flow platform. Provides evidence packs, quality policies, and auditable release decisions for autonomous agent deployments. Multi-service architecture on GCP Cloud Run: agent tracing, data ingestion (Glutton), Prefect-orchestrated workflow pipelines, MCP server for tool integration, and a Next.js data flow platform — all backed by BigQuery, Pub/Sub, and GCS.</p>
+            <p>Enterprise AI agent evaluation and data flow platform. Provides evidence packs, quality policies, and auditable release decisions for autonomous agent deployments. Multi-service architecture on GCP Cloud Run: agent tracing, data ingestion (Glutton), Prefect-orchestrated workflow pipelines, MCP server for tool integration, and a data flow platform — all backed by BigQuery, Pub/Sub, and GCS.</p>
             <div class="tech-tags" style="margin-top:16px">
               <span class="tech-tag">GCP Cloud Run</span>
               <span class="tech-tag">Terraform</span>
@@ -960,15 +1155,14 @@ footer {
               <span class="tech-tag">BigQuery</span>
               <span class="tech-tag">Pub/Sub</span>
               <span class="tech-tag">MCP</span>
-              <span class="tech-tag">Artifact Registry</span>
               <span class="tech-tag">AI Agents</span>
             </div>
           </div>
           <div class="arch-diagram">
-            <svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg" aria-label="Tactix architecture diagram">
+            <svg viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" aria-label="Tactix architecture diagram">
               <defs>
-                <marker id="at" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-                  <path d="M0,1 L6,3.5 L0,6 Z" style="fill:var(--fg-3)"/>
+                <marker id="a5" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                  <path d="M0,1 L5,3 L0,5 Z" style="fill:var(--fg-3)"/>
                 </marker>
               </defs>
               <!-- Inputs -->
@@ -981,53 +1175,51 @@ footer {
               <text x="55" y="90" class="arch-text" text-anchor="middle" font-size="8">Workflows</text>
               <rect x="8" y="104" width="94" height="20" rx="3" class="arch-node"/>
               <text x="55" y="118" class="arch-text" text-anchor="middle" font-size="8">Tools / APIs</text>
-              <!-- Arrows to services -->
-              <line x1="102" y1="30" x2="130" y2="34" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
-              <line x1="102" y1="58" x2="130" y2="60" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
-              <line x1="102" y1="86" x2="130" y2="86" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
-              <line x1="102" y1="114" x2="130" y2="114" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
+              <!-- arrows -->
+              <line x1="102" y1="30" x2="128" y2="34" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a5)" class="flow-line"/>
+              <line x1="102" y1="58" x2="128" y2="58" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a5)" class="flow-line d1"/>
+              <line x1="102" y1="86" x2="128" y2="82" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a5)" class="flow-line d2"/>
+              <line x1="102" y1="114" x2="128" y2="110" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a5)" class="flow-line d3"/>
               <!-- Cloud Run Services -->
               <text x="190" y="14" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">CLOUD RUN SERVICES</text>
-              <rect x="130" y="20" width="122" height="24" rx="4" class="arch-node-accent"/>
-              <text x="191" y="36" class="arch-accent-text" text-anchor="middle" font-size="9">Glutton · Ingestion</text>
-              <rect x="130" y="50" width="122" height="24" rx="4" class="arch-node-accent"/>
-              <text x="191" y="66" class="arch-accent-text" text-anchor="middle" font-size="9">Agent · Evidence OS</text>
-              <rect x="130" y="80" width="122" height="24" rx="4" class="arch-node-accent"/>
-              <text x="191" y="96" class="arch-accent-text" text-anchor="middle" font-size="9">Prefect · Workflow</text>
-              <rect x="130" y="110" width="122" height="24" rx="4" class="arch-node-accent"/>
-              <text x="191" y="126" class="arch-accent-text" text-anchor="middle" font-size="9">MCP Server</text>
+              <rect x="128" y="20" width="124" height="24" rx="4" class="arch-node-accent"/>
+              <text x="190" y="36" class="arch-accent-text" text-anchor="middle" font-size="9">Glutton · Ingestion</text>
+              <rect x="128" y="50" width="124" height="24" rx="4" class="arch-node-accent"/>
+              <text x="190" y="66" class="arch-accent-text" text-anchor="middle" font-size="9">Agent · Evidence OS</text>
+              <rect x="128" y="80" width="124" height="24" rx="4" class="arch-node-accent"/>
+              <text x="190" y="96" class="arch-accent-text" text-anchor="middle" font-size="9">Prefect · Workflow</text>
+              <rect x="128" y="110" width="124" height="24" rx="4" class="arch-node-accent"/>
+              <text x="190" y="126" class="arch-accent-text" text-anchor="middle" font-size="9">MCP Server</text>
               <!-- Pub/Sub -->
-              <rect x="130" y="146" width="122" height="22" rx="3" class="arch-node"/>
-              <text x="191" y="160" class="arch-text" text-anchor="middle" font-size="8">Pub/Sub Event Bus</text>
-              <line x1="191" y1="134" x2="191" y2="146" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
+              <rect x="128" y="146" width="124" height="22" rx="3" class="arch-node"/>
+              <text x="190" y="160" class="arch-text" text-anchor="middle" font-size="8">Pub/Sub Event Bus</text>
+              <line x1="190" y1="134" x2="190" y2="146" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a5)" class="flow-line d4"/>
               <!-- Arrows to storage -->
-              <line x1="252" y1="32" x2="276" y2="38" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
-              <line x1="252" y1="62" x2="276" y2="56" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
-              <line x1="252" y1="157" x2="276" y2="80" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
+              <line x1="252" y1="32" x2="275" y2="40" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a5)" class="flow-line d5"/>
+              <line x1="252" y1="62" x2="275" y2="58" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a5)" class="flow-line d6"/>
+              <line x1="252" y1="157" x2="275" y2="80" stroke="var(--fg-3)" stroke-width="0.8" marker-end="url(#a5)"/>
               <!-- Storage -->
               <text x="315" y="14" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.1em">STORAGE</text>
-              <rect x="276" y="20" width="78" height="52" rx="5" class="arch-node-accent"/>
+              <rect x="275" y="20" width="80" height="50" rx="5" class="arch-node-accent"/>
               <text x="315" y="40" class="arch-accent-text" text-anchor="middle" font-size="9">BigQuery</text>
-              <text x="315" y="54" class="arch-sub" text-anchor="middle" font-size="8">Datasets</text>
-              <text x="315" y="65" class="arch-sub" text-anchor="middle" font-size="8">Tables · Views</text>
-              <rect x="276" y="80" width="78" height="30" rx="4" class="arch-node"/>
-              <text x="315" y="95" class="arch-text" text-anchor="middle" font-size="8">GCS Buckets</text>
-              <text x="315" y="105" class="arch-sub" text-anchor="middle" font-size="8">Archives · Cache</text>
-              <!-- Data flow platform -->
-              <rect x="276" y="120" width="78" height="48" rx="4" class="arch-node-warm"/>
-              <text x="315" y="137" class="arch-text" text-anchor="middle" font-size="8">Data Flow</text>
-              <text x="315" y="149" class="arch-text" text-anchor="middle" font-size="8">Platform</text>
-              <text x="315" y="162" class="arch-sub" text-anchor="middle" font-size="7">Next.js · API</text>
-              <line x1="252" y1="96" x2="276" y2="110" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
-              <line x1="252" y1="122" x2="276" y2="140" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#at)"/>
-              <!-- Artifact registry -->
-              <rect x="130" y="178" width="224" height="20" rx="3" class="arch-node"/>
-              <text x="242" y="191" class="arch-sub" text-anchor="middle" font-size="7" letter-spacing="0.05em">Artifact Registry · Docker Images · GitHub Actions CI/CD</text>
+              <text x="315" y="54" class="arch-sub" text-anchor="middle" font-size="7">Datasets · Tables</text>
+              <text x="315" y="64" class="arch-sub" text-anchor="middle" font-size="7">Views · Policies</text>
+              <rect x="275" y="78" width="80" height="28" rx="4" class="arch-node"/>
+              <text x="315" y="92" class="arch-text" text-anchor="middle" font-size="8">GCS Buckets</text>
+              <text x="315" y="103" class="arch-sub" text-anchor="middle" font-size="7">Archives · Cache</text>
+              <rect x="275" y="114" width="80" height="48" rx="4" class="arch-node-warm"/>
+              <text x="315" y="132" class="arch-warm-text" text-anchor="middle" font-size="8">Data Flow</text>
+              <text x="315" y="144" class="arch-warm-text" text-anchor="middle" font-size="8">Platform</text>
+              <text x="315" y="156" class="arch-sub" text-anchor="middle" font-size="7">Next.js · API</text>
+              <line x1="252" y1="92" x2="275" y2="106" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a5)"/>
+              <line x1="252" y1="120" x2="275" y2="132" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a5)"/>
+              <!-- Artifact Registry -->
+              <rect x="128" y="178" width="227" height="18" rx="3" class="arch-node"/>
+              <text x="241" y="190" class="arch-sub" text-anchor="middle" font-size="7" letter-spacing="0.04em">Artifact Registry · Docker Images · GitHub Actions CI/CD · WIF</text>
               <!-- GCP band -->
-              <rect x="5" y="208" width="350" height="20" rx="3" class="arch-band"/>
-              <text x="180" y="221" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.09em">GCP · TERRAFORM MANAGED · IAM · WIF · CLOUD SCHEDULER</text>
-              <!-- Bottom note -->
-              <text x="180" y="244" class="arch-sub" text-anchor="middle" font-size="7">Evidence packs · Quality policies · Auditable agent release decisions</text>
+              <rect x="5" y="206" width="350" height="22" rx="3" class="arch-band"/>
+              <text x="180" y="220" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.08em">GCP · TERRAFORM · IAM · CLOUD SCHEDULER · dev-tactix / prod-tactix</text>
+              <text x="180" y="234" class="arch-sub" text-anchor="middle" font-size="6.5">Evidence packs · Quality policies · Auditable AI agent release decisions</text>
             </svg>
           </div>
         </div>
@@ -1040,8 +1232,7 @@ footer {
   <section class="section" id="stack">
     <div class="section-label">Technical Stack</div>
     <div class="stack-grid">
-
-      <div class="stack-group">
+      <div class="stack-group reveal d1">
         <h4>Orchestration</h4>
         <ul class="stack-list">
           <li>Kubernetes (EKS, GKE)</li>
@@ -1050,8 +1241,7 @@ footer {
           <li>AWS Fargate</li>
         </ul>
       </div>
-
-      <div class="stack-group">
+      <div class="stack-group reveal d2">
         <h4>Infrastructure as Code</h4>
         <ul class="stack-list">
           <li>Terraform (modular, multi-env)</li>
@@ -1060,8 +1250,7 @@ footer {
           <li>Helm charts</li>
         </ul>
       </div>
-
-      <div class="stack-group">
+      <div class="stack-group reveal d3">
         <h4>Databases &amp; Streaming</h4>
         <ul class="stack-list">
           <li>PostgreSQL / Aurora</li>
@@ -1070,8 +1259,7 @@ footer {
           <li>Apache Kafka / MSK</li>
         </ul>
       </div>
-
-      <div class="stack-group">
+      <div class="stack-group reveal d4">
         <h4>DataOps &amp; Automation</h4>
         <ul class="stack-list">
           <li>Prefect (ETL orchestration)</li>
@@ -1080,8 +1268,7 @@ footer {
           <li>BigQuery · Redshift</li>
         </ul>
       </div>
-
-      <div class="stack-group">
+      <div class="stack-group reveal d5">
         <h4>Cloud &amp; Networking</h4>
         <ul class="stack-list">
           <li>AWS (primary) · GCP · Azure</li>
@@ -1090,28 +1277,25 @@ footer {
           <li>WAF · Route53 · CloudFront</li>
         </ul>
       </div>
-
-      <div class="stack-group">
+      <div class="stack-group reveal d6">
         <h4>Observability</h4>
         <ul class="stack-list">
           <li>Prometheus + Grafana</li>
           <li>New Relic · CloudWatch</li>
           <li>AWS X-Ray · OTEL</li>
-          <li>Pingdom (familiar)</li>
+          <li>Loki · Promtail · Jaeger</li>
         </ul>
       </div>
-
-      <div class="stack-group">
+      <div class="stack-group reveal d1">
         <h4>CI/CD &amp; Security</h4>
         <ul class="stack-list">
           <li>GitHub Actions</li>
           <li>Jenkins (DSL + JCasC)</li>
-          <li>Trivy · SonarQube</li>
+          <li>Trivy · SonarQube · Gitleaks</li>
           <li>Secrets Manager · KMS</li>
         </ul>
       </div>
-
-      <div class="stack-group">
+      <div class="stack-group reveal d2">
         <h4>AI &amp; Scripting</h4>
         <ul class="stack-list">
           <li>AWS Bedrock · Transcribe</li>
@@ -1120,16 +1304,14 @@ footer {
           <li>Bash · Node.js · TypeScript</li>
         </ul>
       </div>
-
     </div>
   </section>
 
-  <!-- Certification & Contact -->
+  <!-- Certification & Availability -->
   <section class="section" style="border-bottom: none;" id="contact">
     <div class="section-label">Certification &amp; Availability</div>
     <div class="bottom-grid">
-
-      <div class="cert-card">
+      <div class="cert-card reveal">
         <div class="cert-icon">☁</div>
         <div class="cert-info">
           <h4>AWS DevOps Engineer – Professional</h4>
@@ -1137,13 +1319,11 @@ footer {
           <a href="https://www.credly.com/badges/61b676ac-1350-4aab-9b4c-7b570a03bca5/public_url" target="_blank" rel="noopener" class="cert-link">Verify on Credly →</a>
         </div>
       </div>
-
-      <div class="avail-card">
+      <div class="avail-card reveal d1">
         <div class="avail-dot"></div>
         <span class="avail-main">Open to new opportunities</span>
         <span class="avail-detail">Skilled Worker visa sponsorship required · London / Remote</span>
       </div>
-
     </div>
   </section>
 
@@ -1159,5 +1339,27 @@ footer {
   </footer>
 
 </div>
+
+<script>
+// Scroll reveal
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// SVG flow animation trigger
+const archObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('animated'); archObs.unobserve(e.target); }
+  });
+}, { threshold: 0.25 });
+document.querySelectorAll('.arch-diagram').forEach(el => archObs.observe(el));
+
+// Make hero visible immediately (no delay)
+document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('visible'));
+</script>
+
 </body>
 </html>
