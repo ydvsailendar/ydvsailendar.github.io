@@ -7,23 +7,24 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Senior Platform &amp; Cloud Engineer — Platform, DataOps, AI, SRE, DevSecOps. 8+ years. UK-based. Open to Skilled Worker visa sponsorship.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Mono:wght@400;500&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Syne:wght@600;700;800&family=DM+Mono:wght@400;500&display=swap">
 <style>
 /* ── Design tokens (Light-first) ─────────────────────────────────────── */
 :root {
-  --bg:       #FAFAF8;
-  --bg-2:     #F1F4F8;
+  --bg:       #FEFEFF;
+  --bg-2:     #F3F6FA;
   --bg-card:  #FFFFFF;
-  --fg:       #0F172A;
-  --fg-2:     #475569;
-  --fg-3:     #94A3B8;
-  --accent:   #0066CC;
-  --accent-2: #B45309;
-  --border:   #E2E8F0;
-  --chip-bg:  #EFF6FF;
-  --chip-fg:  #1D4ED8;
-  --green:    #16A34A;
-  --shadow:   0 1px 3px rgba(15,23,42,0.06), 0 4px 12px rgba(15,23,42,0.04);
+  --fg:       #111827;
+  --fg-2:     #374151;
+  --fg-3:     #9CA3AF;
+  --accent:   #1A6FD4;
+  --accent-2: #C05621;
+  --border:   #E5EAF1;
+  --chip-bg:  #EEF3FF;
+  --chip-fg:  #2455CC;
+  --green:    #15803D;
+  --shadow:   0 1px 3px rgba(15,23,42,0.05), 0 4px 16px rgba(15,23,42,0.04);
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
@@ -66,7 +67,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--fg);
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -153,7 +154,20 @@ nav {
 .hero {
   padding-block: 80px 72px;
   border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
 }
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 20%, color-mix(in srgb, var(--accent) 7%, transparent) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 10% 80%, color-mix(in srgb, var(--accent-2) 5%, transparent) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-layout { position: relative; z-index: 1; }
 .hero-layout {
   display: grid;
   grid-template-columns: 1fr 220px;
@@ -220,7 +234,7 @@ h1 em { font-style: normal; color: var(--accent); }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 13.5px;
   font-weight: 500;
   padding: 9px 18px;
@@ -235,17 +249,35 @@ h1 em { font-style: normal; color: var(--accent); }
 .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
 /* Hero photo */
-.hero-photo { display: flex; justify-content: center; }
+.hero-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  width: 224px;
+  height: 224px;
+  border-radius: 50%;
+  background: conic-gradient(var(--accent) 0%, var(--accent-2) 50%, var(--accent) 100%);
+  opacity: 0.18;
+  animation: spin-slow 12s linear infinite;
+}
+@keyframes spin-slow { to { transform: rotate(360deg); } }
 .hero-photo-img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--border);
-  box-shadow: 0 8px 40px rgba(0,102,204,0.12), var(--shadow);
+  border: 4px solid var(--bg-card);
+  box-shadow: 0 0 0 2px var(--accent), 0 8px 40px rgba(26,111,212,0.15), var(--shadow);
   transition: box-shadow 0.3s;
+  position: relative;
+  z-index: 1;
 }
-.hero-photo-img:hover { box-shadow: 0 12px 48px rgba(0,102,204,0.2), var(--shadow); }
+.hero-photo-img:hover { box-shadow: 0 0 0 2px var(--accent), 0 12px 48px rgba(26,111,212,0.22), var(--shadow); }
 
 /* ── Sections ── */
 .section {
@@ -264,7 +296,46 @@ h1 em { font-style: normal; color: var(--accent); }
   gap: 14px;
   margin-bottom: 44px;
 }
-.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.section-label::before { content: ''; width: 3px; height: 14px; background: var(--accent); border-radius: 2px; flex-shrink: 0; }
+.section-label::after  { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ── Stats strip ── */
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.stat-cell {
+  background: var(--bg-card);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: var(--accent);
+}
+.stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+@media (max-width: 640px) {
+  .stats-strip { grid-template-columns: repeat(2, 1fr); }
+}
 
 /* ── Domain cards ── */
 .domain-grid {
@@ -292,6 +363,19 @@ h1 em { font-style: normal; color: var(--accent); }
   margin-bottom: 12px;
   display: block;
 }
+.domain-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--chip-bg);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--border));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  font-size: 17px;
+  flex-shrink: 0;
+}
 .domain-card h3 {
   font-family: 'Syne', sans-serif;
   font-size: 15px;
@@ -300,7 +384,7 @@ h1 em { font-style: normal; color: var(--accent); }
   margin: 0 0 8px;
   color: var(--fg);
 }
-.domain-card p { font-size: 13px; color: var(--fg-2); margin: 0; line-height: 1.65; }
+.domain-card p { font-size: 13.5px; color: var(--fg-2); margin: 0; line-height: 1.65; }
 
 /* ── Timeline ── */
 .timeline { display: flex; flex-direction: column; }
@@ -352,9 +436,9 @@ h1 em { font-style: normal; color: var(--accent); }
   gap: 7px;
 }
 .tl-bullets li {
-  font-size: 14px;
+  font-size: 14.5px;
   color: var(--fg-2);
-  line-height: 1.65;
+  line-height: 1.68;
   display: flex;
   align-items: baseline;
   gap: 10px;
@@ -472,16 +556,20 @@ h1 em { font-style: normal; color: var(--accent); }
 }
 .stack-group h4 {
   font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-size: 10.5px;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent-2);
-  margin: 0 0 12px;
+  margin: 0 0 14px;
+  padding: 6px 10px;
+  background: color-mix(in srgb, var(--accent-2) 7%, var(--bg-card));
+  border-left: 2.5px solid var(--accent-2);
+  border-radius: 0 4px 4px 0;
 }
 .stack-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
 .stack-list li {
-  font-size: 13.5px;
+  font-size: 14px;
   color: var(--fg-2);
   display: flex;
   align-items: baseline;
@@ -663,36 +751,64 @@ footer {
     </div>
   </section>
 
+  <!-- Stats strip -->
+  <section class="section" style="padding-block: 48px;" aria-label="Quick facts">
+    <div class="stats-strip reveal">
+      <div class="stat-cell">
+        <span class="stat-num">8+</span>
+        <span class="stat-label">Years in production infra</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Major cloud platforms</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">15+</span>
+        <span class="stat-label">Tools &amp; frameworks</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">5</span>
+        <span class="stat-label">Architecture projects</span>
+      </div>
+    </div>
+  </section>
+
   <!-- Domains -->
   <section class="section" id="domains">
     <div class="section-label">What I work on</div>
     <div class="domain-grid">
       <div class="domain-card reveal d1">
+        <div class="domain-icon">⚙️</div>
         <span class="domain-num">01 · Platform</span>
         <h3>Platform Engineering</h3>
         <p>Kubernetes cluster operations (EKS/GKE), Terraform IaC at scale, GitOps workflows, internal developer platforms, and multi-environment infrastructure lifecycle management.</p>
       </div>
       <div class="domain-card reveal d2">
+        <div class="domain-icon">☁️</div>
         <span class="domain-num">02 · Cloud</span>
         <h3>Cloud Engineering</h3>
         <p>Multi-cloud architecture — AWS primary, GCP and Azure. Transit Gateway, cross-account VPC topology, PrivateLink, VPC endpoints, WAF, and multi-account AWS org networking.</p>
       </div>
       <div class="domain-card reveal d3">
+        <div class="domain-icon">📊</div>
         <span class="domain-num">03 · DataOps</span>
         <h3>DataOps &amp; Data Infrastructure</h3>
         <p>Kafka/MSK pipeline operations, PostgreSQL/Aurora and Redis at scale, Prefect ETL orchestration, data ingestion pipelines, data warehousing, and financial reporting infrastructure.</p>
       </div>
       <div class="domain-card reveal d4">
+        <div class="domain-icon">🤖</div>
         <span class="domain-num">04 · AI</span>
         <h3>AI Engineer · Enterprise AI</h3>
         <p>LLM-powered pipelines, AI agent infrastructure, AWS Bedrock, Transcribe, and Comprehend integrations, 3rd-party AI API production integrations, and model serving on Kubernetes.</p>
       </div>
       <div class="domain-card reveal d5">
+        <div class="domain-icon">🔐</div>
         <span class="domain-num">05 · Security</span>
         <h3>DevSecOps</h3>
         <p>Shift-left scanning (Trivy, SonarQube), IAM least-privilege, KMS and Secrets Manager, Security Hub remediation, supply-chain controls, and mTLS end-to-end encryption.</p>
       </div>
       <div class="domain-card reveal d6">
+        <div class="domain-icon">📈</div>
         <span class="domain-num">06 · Reliability</span>
         <h3>SRE &amp; Observability</h3>
         <p>Prometheus + Grafana stacks, CloudWatch, New Relic, and AWS X-Ray. SLO/SLA alerting, incident response runbooks, MTTR reduction, and post-incident review processes.</p>
