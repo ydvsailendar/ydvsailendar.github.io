@@ -1161,14 +1161,14 @@ footer {
               <!-- VPC endpoints -->
               <rect x="228" y="28" width="119" height="28" rx="3" class="arch-node-accent"/>
               <text x="287" y="41" class="arch-accent-text" text-anchor="middle" font-size="8">VPC Interface Endpoints</text>
-              <text x="287" y="51" class="arch-sub" text-anchor="middle" font-size="8">ssm · ssmmessages · ec2messages</text>
+              <text x="287" y="51" class="arch-sub" text-anchor="middle" font-size="7">ssm · ssmmessages · ec2msgs</text>
               <!-- SSM → VPC endpoints -->
               <line x1="210" y1="40" x2="228" y2="40" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a2)" class="flow-line d2"/>
               <!-- EC2 / ECS targets -->
               <line x1="287" y1="56" x2="287" y2="70" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a2)" class="flow-line d3"/>
               <rect x="228" y="70" width="55" height="28" rx="3" class="arch-node"/>
               <text x="255" y="83" class="arch-text" text-anchor="middle" font-size="8">EC2</text>
-              <text x="255" y="93" class="arch-sub" text-anchor="middle" font-size="8">public + private</text>
+              <text x="255" y="93" class="arch-sub" text-anchor="middle" font-size="8">pub + priv</text>
               <rect x="290" y="70" width="57" height="28" rx="3" class="arch-node"/>
               <text x="318" y="83" class="arch-text" text-anchor="middle" font-size="8">ECS Tasks</text>
               <text x="318" y="93" class="arch-sub" text-anchor="middle" font-size="8">ECS Exec</text>
@@ -1193,7 +1193,7 @@ footer {
               <!-- Connector from SSM to audit -->
               <line x1="155" y1="60" x2="155" y2="138" stroke="var(--fg-3)" stroke-width="0.5" opacity="0.3"/>
               <rect x="110" y="130" width="90" height="16" rx="3" class="arch-node"/>
-              <text x="155" y="141" class="arch-sub" text-anchor="middle" font-size="8">IAM · Session metadata</text>
+              <text x="155" y="141" class="arch-sub" text-anchor="middle" font-size="7">IAM · Session meta</text>
             </svg>
           </div>
         </div>
@@ -1418,7 +1418,7 @@ footer {
               <line x1="252" y1="120" x2="275" y2="132" stroke="var(--fg-3)" stroke-width="1" marker-end="url(#a5)"/>
               <!-- Artifact Registry -->
               <rect x="128" y="178" width="227" height="18" rx="3" class="arch-node"/>
-              <text x="241" y="190" class="arch-sub" text-anchor="middle" font-size="7" letter-spacing="0.04em">Artifact Registry · Docker · GitHub Actions CI/CD · WIF</text>
+              <text x="241" y="190" class="arch-sub" text-anchor="middle" font-size="7">Artifact Registry · Docker · GitHub Actions · WIF</text>
               <!-- GCP band -->
               <rect x="5" y="206" width="350" height="22" rx="3" class="arch-band"/>
               <text x="180" y="220" class="arch-band-text" text-anchor="middle" font-size="7" letter-spacing="0.08em">GCP · TERRAFORM · IAM · CLOUD SCHEDULER · dev-tactix / prod-tactix</text>
